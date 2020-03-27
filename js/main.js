@@ -31,6 +31,7 @@ $(document).ready(function () {
 
     $('.nav-item a:first').tab('show');
 
+    $('#about').css('top', -(window_height - $('.about-area').height() + ($(window).width() < 576 ? 0 : ($('header').outerHeight())))/2);
 
     // Select all links with hashes
     $('a[href*="#"]')

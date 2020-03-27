@@ -1515,6 +1515,14 @@ nav {
 .lnr {
   font-weight: 700; }
 
+@media (max-width: 768px) {
+  .not-mobile {
+    display: none !important; } }
+
+@media (min-width: 769px) {
+  .only-mobile {
+    display: none !important; } }
+
 .p1-gradient-bg, .primary-btn, .primary-btn:after, .banner-content .clock_sec, .head-btn:hover, .callto-wrap, .single-project .content .content-overlay, .single-vol .content .content-overlay {
   background-image: -moz-linear-gradient(0deg, #f40f68 0%, #f86e3d 55%, #fbcd11 100%);
   background-image: -webkit-linear-gradient(0deg, #f40f68 0%, #f86e3d 55%, #fbcd11 100%);
@@ -1932,16 +1940,20 @@ nav {
   -o-background-size: cover;
   background-size: cover; }
   .donate-area .overlay-bg {
-    opacity: .9;
-    background-color: black; }
+    background-color: #fff; }
   .donate-area .header-text h1 {
-    color: #fff;
+    color: black;
     margin-bottom: 25px; }
   .donate-area .contact-left h4 {
-    color: #fff;
+    color: black;
     margin-bottom: 10px; }
   .donate-area .contact-left .single-info {
     margin-bottom: 30px; }
+  .donate-area .contact-left .force-scroll {
+    height: 300px;
+    overflow: hidden; }
+  .donate-area .contact-left .force-scroll:hover {
+    overflow-y: scroll; }
   .donate-area .contact-right .form-control {
     border-radius: 0;
     background-color: transparent;
@@ -1963,13 +1975,13 @@ nav {
   .donate-area .contact-right .list {
     width: 100%; }
   .donate-area .contact-right .payment-method {
-    color: #ccc;
-    margin-top: 30px; }
+    color: black; }
 
 .footer-area {
   background-color: #fff;
   color: #222;
-  text-align: center; }
+  text-align: center;
+  padding-top: 50px; }
 
 .footer-menu {
   margin-bottom: 30px; }

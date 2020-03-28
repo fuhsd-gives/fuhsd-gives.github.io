@@ -8,11 +8,11 @@
 /* =================================== */
 ::-moz-selection {
   /* Code for Firefox */
-  background-color: #f41665;
+  background-color: #8b0e05;
   color: #fff; }
 
 ::selection {
-  background-color: #f41665;
+  background-color: #8b0e05;
   color: #fff; }
 
 ::-webkit-input-placeholder {
@@ -1941,20 +1941,22 @@ nav {
   -o-background-size: cover;
   background-size: cover; }
   .donate-area .overlay-bg {
-    background-color: #fff; }
+    background-color: #f9f9ff; }
   .donate-area .header-text h1 {
     color: black;
     margin-bottom: 25px; }
-  .donate-area .contact-left h4 {
-    color: black;
-    margin-bottom: 10px; }
-  .donate-area .contact-left .single-info {
-    margin-bottom: 30px; }
-  .donate-area .contact-left .force-scroll {
-    height: 300px;
-    overflow: hidden; }
-  .donate-area .contact-left .force-scroll:hover {
-    overflow-y: scroll; }
+  .donate-area .contact-left {
+    padding-right: 8%; }
+    .donate-area .contact-left h4 {
+      color: black;
+      margin-bottom: 10px; }
+    .donate-area .contact-left .single-info {
+      margin-bottom: 30px; }
+    .donate-area .contact-left .force-scroll {
+      height: 300px;
+      overflow: hidden; }
+    .donate-area .contact-left .force-scroll:hover {
+      overflow-y: scroll; }
   .donate-area .contact-right .form-control {
     border-radius: 0;
     background-color: transparent;

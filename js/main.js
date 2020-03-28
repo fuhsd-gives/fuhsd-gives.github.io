@@ -12,6 +12,7 @@ $(document).ready(function () {
     $(".fitscreen").css("height", fitscreen);
 
     //-------- Active Sticky Js ----------//
+    $('#tmpSticky').css('display', 'none');
     $(".default-header").sticky({topSpacing: 0});
 
 

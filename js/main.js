@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     $('.nav-item a:first').tab('show');
 
-    $('#about').css('top', -(window_height - $('.about-area').height() + ($(window).width() < 576 ? 0 : ($('header').outerHeight())))/2);
+    $('#about').css('top', -(window_height - $('.about-area').height() + ($(window).width() < 576 ? 0 : ($('header').outerHeight()))) / 2);
 
     // Select all links with hashes
     $('a[href*="#"]')
@@ -70,6 +70,8 @@ $(document).ready(function () {
                 }
             }
         });
+
+    $('#copyright').html('Copyright &copy;'+new Date().getFullYear()+' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">FUHSD Gives</a>\n');
 
     // -------   Mail Send ajax
 

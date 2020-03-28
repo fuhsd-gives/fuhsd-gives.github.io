@@ -55,7 +55,12 @@
         <div class="header-wrap">
             <div class="header-top d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="#home"><img alt="" src="img/logo.png"></a>
+                    <a href="#home">
+                        <div style="height: 30px; width: 120px; position: relative; transform-origin: 0 0;">
+                            <img alt="FUHSD Gives logo" height="30" src="img/logo.png"
+                                 style="position: absolute; left: 10%; top: 0; bottom: 0; transform: scale(1.2)">
+                        </div>
+                    </a>
                 </div>
                 <div class="main-menubar d-flex align-items-center">
                     <nav class="hide">
@@ -76,11 +81,11 @@
 <section class="banner-area relative" id="home">
     <div class="overlay overlay-bg"></div>
     <div class="container">
-        <div class="row fullscreen align-items-center justify-content-start" style="height: 915px;">
+        <div class="row align-items-center justify-content-start">
             <div class="banner-content col-lg-9 col-md-12">
                 <h1>
                     Your Donation <br>
-                    is Others Inspiration
+                    Makes a Difference.
                 </h1>
                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
             </div>
@@ -90,14 +95,14 @@
 <!-- End banner Area -->
 
 <!-- Start callto Area -->
-<section class="callto-area relative">
-    <div class="container">
-        <div class="row d-flex callto-wrap justify-content-between pt-40 pb-40">
-            <h3 class="text-white">Help out those in need in Your Community</h3>
-            <a class="head-btn head-btn2 btn text-uppercase" href="#">Donate Now</a>
-        </div>
-    </div>
-</section>
+<!--<section class="callto-area relative">-->
+<!--    <div class="container">-->
+<!--        <div class="row d-flex callto-wrap justify-content-between pt-40 pb-40">-->
+<!--            <h3 class="text-white">Help out those in need in Your Community</h3>-->
+<!--            <a class="head-btn head-btn2 btn text-uppercase" href="#">Donate Now</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <!-- End callto Area -->
 
 
@@ -105,7 +110,7 @@
 <section class="project-area section-gap" id="project">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-8 pb-80 header-text">
+            <div class="col-md-8 pb-50 header-text">
                 <h1>Waiting for Help</h1>
                 <p>
                     Coronavirus disease 2019 (COVID-19) is an infectious disease. Write the mission statement here. Talk
@@ -122,7 +127,7 @@
                             <div class="content-overlay"></div>
                             <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p1.jpg">
                             <div class="content-details fadeIn-bottom">
-                                <a class="head-btn btn text-uppercase" href="#">Donate Now</a>
+                                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
                         </a>
                     </div>
@@ -142,7 +147,7 @@
                             <div class="content-overlay"></div>
                             <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p2.jpg">
                             <div class="content-details fadeIn-bottom">
-                                <a class="head-btn btn text-uppercase" href="#">Donate Now</a>
+                                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
                         </a>
                     </div>
@@ -161,7 +166,7 @@
                             <div class="content-overlay"></div>
                             <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p3.jpg">
                             <div class="content-details fadeIn-bottom">
-                                <a class="head-btn btn text-uppercase" href="#">Donate Now</a>
+                                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
                         </a>
                     </div>
@@ -292,7 +297,7 @@
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row d-flex justify-content-end">
-            <div class="col-lg-6 col-sm-12 pb-80 header-text">
+            <div class="col-lg-6 col-sm-12 pb-50 header-text">
                 <h1>Donate Now</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut
@@ -367,10 +372,8 @@
                 <a href="#"><i class="fa fa-dribbble"></i></a>
                 <a href="#"><i class="fa fa-behance"></i></a>
             </div>
-            <p class="footer-text m-0">
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a
-                    href="./" rel="noopener" target="_blank">FUHSD Gives</a>
+            <p class="footer-text m-0" id="copyright">
+
             </p>
             <p class="footer-text mt-1 mb-0">
                 This organization is a partner of <a

@@ -1612,15 +1612,19 @@ nav {
   height: 48px !important; }
 
 .banner-area {
-  background: url(../img/header-bg.jpg) no-repeat center center/cover; }
+  background: url(../img/header-bg.jpg) no-repeat center center/cover;
+  max-height: calc(100vh - 140px); }
   @media (max-width: 767px) {
     .banner-area .fullscreen {
       height: 700px !important; } }
   .banner-area .overlay-bg {
-    opacity: .5;
+    opacity: .62;
     background-color: black; }
+  .banner-area .container .row {
+    height: calc(100vh - 140px); }
 
 .banner-content h1 {
+  text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;
   color: #fff;
   font-size: 72px;
   font-weight: 700;
@@ -1663,23 +1667,20 @@ nav {
       font-weight: 600; }
 
 .head-btn {
-  border: 1px solid #777;
   color: #222;
   font-weight: 500;
   background: #fff;
-  border: 1px solid transparent;
   text-transform: uppercase;
-  border: 1px solid transparent;
   font-size: 14px;
   border-radius: 20px;
-  padding: 12px 28px;
+  padding: 14px 30px;
+  border: none;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
   .head-btn:hover {
     color: #fff;
-    border: 1px solid transparent;
     cursor: pointer; }
 
 .head-btn2 {

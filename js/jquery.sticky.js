@@ -35,7 +35,7 @@
                     elementTop = s.stickyWrapper.offset().top,
                     etse = elementTop - s.topSpacing - extra;
 
-                if (scrollTop <= etse + 100) {
+                if (scrollTop <= etse + window.innerHeight / 4) {
                     if (s.currentTop !== null && scrollTop == 0) {
                         s.stickyElement
                             .css('width', '')

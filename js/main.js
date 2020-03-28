@@ -68,6 +68,9 @@ $(document).ready(function () {
 
                     });
                 }
+
+                console.info(this.hash);
+                console.info(target);
             }
         });
 

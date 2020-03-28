@@ -1500,6 +1500,9 @@ nav {
 
 .section-gap {
   padding: 120px 0; }
+  @media (max-width: 767px) {
+    .section-gap {
+      padding: 80px 0; } }
 
 .section-title {
   padding-bottom: 30px; }
@@ -1622,6 +1625,9 @@ nav {
     background-color: black; }
   .banner-area .container .row {
     height: calc(100vh - 140px); }
+    @media (max-width: 767px) {
+      .banner-area .container .row {
+        max-height: 50vh; } }
 
 .banner-content h1 {
   text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;

@@ -1604,6 +1604,26 @@ nav {
   top: 0;
   bottom: 0; }
 
+#aboutModal .modal-body {
+  font-size: 115%; }
+
+.modal h2 {
+  font-size: 20px !important;
+  font-weight: 600 !important; }
+
+.modal .text-description, .modal .links {
+  font-size: 115%; }
+
+.modal .resources-des {
+  padding-top: 15px;
+  text-decoration: underline; }
+
+.modal .links {
+  font-size: 14px;
+  padding-top: 5px; }
+  .modal .links p {
+    margin: 0; }
+
 .default-header {
   background-color: #fff;
   padding: 20px 0;

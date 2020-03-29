@@ -16,15 +16,15 @@
     </script>
 
 
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://m.stripe.com" crossorigin>
+    <link crossorigin href="https://www.google-analytics.com" rel="preconnect">
+    <link crossorigin href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link crossorigin href="https://m.stripe.com" rel="preconnect">
 
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://m.stripe.com">
+    <link href="https://www.google-analytics.com" rel="dns-prefetch">
+    <link href="https://fonts.googleapis.com" rel="dns-prefetch">
+    <link href="https://fonts.gstatic.com" rel="dns-prefetch">
+    <link href="https://m.stripe.com" rel="dns-prefetch">
 
     <!-- Mobile Specific Meta -->
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
@@ -46,7 +46,8 @@
     <!-- Site Title -->
     <title>FUHSD Gives - Give Back to the Community</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700&display=swap"
+          rel="stylesheet">
     <!--
     CSS
     ============================================= -->
@@ -61,7 +62,7 @@
 </head>
 <body>
 
-<div style="height: 48px" id="tmpSticky"></div>
+<div id="tmpSticky" style="height: 48px"></div>
 
 <!-- Start Header Area -->
 <header class="default-header">
@@ -90,6 +91,61 @@
     </div>
 </header>
 <!-- End Header Area -->
+
+<!--start modal templates-->
+<div aria-hidden="true" aria-labelledby="projectModalLabel" class="modal fade" id="projectModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="projectModalLabel">About </h2>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-description"></div>
+                <div class="resources-des">Resource Links:</div>
+                <div class="links"></div>
+            </div>
+            <div class="modal-footer flex-row justify-content-end align-items-center">
+                <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
+                        class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="aboutModalLabel" class="modal fade" id="aboutModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="aboutModalLabel">About Us</h2>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                We, FUHSD Gives, are students from all across the FUHSD district. We realized that it can be so easy
+                to feel alone and helpless in this unique time, but as a FUHSD community, we can make a meaningful
+                impact. We strive to support organizations and businesses in need of financial assistance due to the
+                COVID-19 pandemic together, as a FUHSD community. As residents of Santa Clara County, our lives have
+                been changed drastically by the novel coronavirus. But, we can fight this pandemic together. If you
+                have any questions for us, feel free to email us at <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a>.
+
+            </div>
+            <div class="modal-footer flex-row justify-content-end align-items-center">
+                <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
+                        class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End Modal templates-->
 
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
@@ -137,9 +193,9 @@
             <div class="col-lg-4 col-md-4 project-wrap">
                 <div class="single-project">
                     <div class="content">
-                        <a href="#" target="_blank">
+                        <a data-project="medical" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p1.jpg" loading="lazy">
+                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p1.jpg">
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -147,19 +203,21 @@
                     </div>
                 </div>
                 <div class="details">
-                    <a href="#"><h2>Medical Supplies</h2></a>
+                    <a data-project="medical" data-target="#projectModal" data-toggle="modal" href="#"><h2>Medical
+                        Supplies</h2></a>
                     <p>Hospitals are rapidly running out of supplies. Direct Relief is coordinating with businesses to
                         provide personal protective equipment to health workers.</p>
-                    <a class="text-uppercase" href="#modal-medsup">read more</a>
+                    <a class="text-uppercase" data-project="medical" data-target="#projectModal" data-toggle="modal"
+                       href="#">read more</a>
                 </div>
 
             </div>
             <div class="col-lg-4 col-md-4 project-wrap">
                 <div class="single-project">
                     <div class="content">
-                        <a href="#" target="_blank">
+                        <a data-project="local" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p2.jpg" loading="lazy">
+                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p2.jpg">
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -167,18 +225,20 @@
                     </div>
                 </div>
                 <div class="details">
-                    <a href="#"><h2>Local Community Services</h2></a>
+                    <a data-project="local" data-target="#projectModal" data-toggle="modal" href="#"><h2>Community
+                        Non-Profits</h2></a>
                     <p>Low income families, the homeless, and seniors rely on food banks to provide meals on a daily
                         basis. Food banks are an essential part of our community.</p>
-                    <a class="text-uppercase" href="#">read more</a>
+                    <a class="text-uppercase" data-project="local" data-target="#projectModal" data-toggle="modal"
+                       href="#">read more</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 project-wrap">
                 <div class="single-project">
                     <div class="content">
-                        <a href="#" target="_blank">
+                        <a data-project="business" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" src="img/p3.jpg" loading="lazy">
+                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p3.jpg">
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -186,10 +246,12 @@
                     </div>
                 </div>
                 <div class="details">
-                    <a href="#"><h2>COVID-19 Response Funds</h2></a>
-                    <p>The World Health Organization and CDC Foundation work to track and understand the spread of the
-                        virus to ensure patients get the care they need.</p>
-                    <a class="text-uppercase" href="#">read more</a>
+                    <a data-project="business" data-target="#projectModal" data-toggle="modal" href="#"><h2>Small
+                        Business Relief</h2></a>
+                    <p>The economic and personal impacts from the COVID-19 pandemic are increasingly devastating for
+                        individuals, families and small businesses across the U.S.</p>
+                    <a class="text-uppercase" data-project="business" data-target="#projectModal" data-toggle="modal"
+                       href="#">read more</a>
                 </div>
             </div>
 
@@ -215,7 +277,9 @@
                     been changed drastically by the novel coronavirus. But, we can fight this pandemic together as a
                     community.
                 </p>
-                <button class="primary-btn mt-20 text-uppercase ">learn more<span class="lnr lnr-arrow-right"></span>
+                <button class="primary-btn mt-20 text-uppercase" data-project="local" data-target="#aboutModal"
+                        data-toggle="modal"
+                        href="#">learn more<span class="lnr lnr-arrow-right"></span>
                 </button>
             </div>
         </div>
@@ -247,7 +311,9 @@
                 <div class="single-info">
                     <h4>Complete Transparency</h4>
                     <p>
-                        All donations to charities will be documented and public at all times here! Email us at
+                        All donations to charities will be documented and public at all times <a
+                            href="https://docs.google.com/spreadsheets/d/1Bt_hDzc8I8-cb9vHVIOFvsd3n_a1PDqa7gdn0-xzVN4/edit?usp=sharing"
+                            rel="noopener" target="_blank">here</a>! Email us at
                         <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a> if you’d like to suggest a
                         charity.
                     </p>
@@ -262,23 +328,26 @@
                 </div>
                 <script paypalExpress="false" src="https://donorbox.org/widget.js"></script>
                 <div class="force-scroll not-mobile">
-                    <iframe frameborder="0" name="donorbox" scrolling="no" seamless="seamless"
+                    <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
+                            seamless="seamless"
                             src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
-                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important" loading="lazy"></iframe>
+                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"></iframe>
                 </div>
             </div>
             <div class="col-lg-6 contact-right">
                 <script paypalExpress="false" src="https://donorbox.org/widget.js"></script>
-                <iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no"
-                        seamless="seamless" src="https://donorbox.org/embed/fuhsdgives"
-                        style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe>
+                <iframe allowpaymentrequest="" frameborder="0" height="900px" id="donateForm" name="donorbox"
+                        scrolling="no" seamless="seamless"
+                        src="https://donorbox.org/embed/fuhsdgives"
+                        style="max-width: 500px; min-width: 310px; max-height:none!important"
+                        width="100%"></iframe>
                 <p class="payment-method">
                     We Accept : <img alt="Visa, Mastercard, American Express, Discover" height="29"
-                                     src="img/payment-sm.png" loading="lazy">
+                                     loading="lazy" src="img/payment-sm.png">
                 </p>
                 <div class="force-scroll only-mobile">
-                    <iframe frameborder="0" name="donorbox" scrolling="no" seamless="seamless"
-                            src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true" loading="lazy"
+                    <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
+                            seamless="seamless" src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
                             style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"></iframe>
                 </div>
             </div>
@@ -330,6 +399,7 @@
 <script src="js/parallax.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

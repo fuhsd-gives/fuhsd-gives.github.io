@@ -1635,7 +1635,7 @@ nav {
   height: 48px !important; }
 
 .banner-area {
-  background: url(../img/header-bg.jpg) no-repeat center center/cover;
+  background: no-repeat center center/cover;
   max-height: calc(100vh - 140px); }
   @media (max-width: 767px) {
     .banner-area .fullscreen {

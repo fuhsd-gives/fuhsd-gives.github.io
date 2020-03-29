@@ -148,7 +148,11 @@
 <!--End Modal templates-->
 
 <!-- start banner Area -->
-<section class="banner-area relative" id="home">
+<section class="banner-area relative" data-lg="resize?size=1920" data-url="https://fuhsdgives.org/img/header-bg.jpg"
+         data-md="resize?size=1240"
+         data-pb-background
+         data-sm="resize?size=640"
+         id="home">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row align-items-center justify-content-start">
@@ -195,7 +199,18 @@
                     <div class="content">
                         <a data-project="medical" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p1.jpg">
+                            <picture>
+                                <source media="(max-width: 770px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p1.jpg/resize?size=402&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(max-width: 986px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p1.jpg/resize?size=212&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 1188px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p1.jpg/resize?size=352&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 987px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p1.jpg/resize?size=292&auth=MTcwNDcxNzM2NQ__">
+                                <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy"
+                                     src="img/p1.jpg">
+                            </picture>
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -217,7 +232,18 @@
                     <div class="content">
                         <a data-project="local" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p2.jpg">
+                            <picture>
+                                <source media="(max-width: 770px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p2.jpg/resize?size=402&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(max-width: 986px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p2.jpg/resize?size=212&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 1188px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p2.jpg/resize?size=352&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 987px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p2.jpg/resize?size=292&auth=MTcwNDcxNzM2NQ__">
+                                <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy"
+                                     src="img/p2.jpg">
+                            </picture>
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -238,7 +264,19 @@
                     <div class="content">
                         <a data-project="business" data-target="#projectModal" data-toggle="modal" href="#">
                             <div class="content-overlay"></div>
-                            <img alt="" class="content-image img-fluid d-block mx-auto" loading="lazy" src="img/p3.jpg">
+                            <picture>
+                                <source media="(max-width: 770px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p3.jpg/resize?size=402&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(max-width: 986px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p3.jpg/resize?size=212&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 1188px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p3.jpg/resize?size=352&auth=MTcwNDcxNzM2NQ__">
+                                <source media="(min-width: 987px)"
+                                        srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/p3.jpg/resize?size=292&auth=MTcwNDcxNzM2NQ__">
+                                <img alt="picture of food truck" class="content-image img-fluid d-block mx-auto"
+                                     loading="lazy" src="img/p3.jpg">
+                            </picture>
+
                             <div class="content-details fadeIn-bottom">
                                 <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
                             </div>
@@ -266,14 +304,16 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-end align-items-center">
             <div class="col-lg-6 col-md-12 about-left no-padding">
-                <img alt="" class="img-fluid" src="img/s-about-img.jpg">
-<!--                <picture>-->
-<!--                    <source media="(min-width: 768px)"-->
-<!--                            srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/s-about-img.jpg/resize?size=768&auth=MTcwNDcxNzM2NQ__">-->
-<!--                    <source media="(max-width: 576px)"-->
-<!--                            srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/s-about-img.jpg/resize?size=576&auth=MTcwNDcxNzM2NQ__">-->
-<!--                    <img src="img/s-about-img.jpg">-->
-<!--                </picture>-->
+                <!--                <img alt="" class="img-fluid" src="img/s-about-img.jpg">-->
+                <picture>
+                    <source media="(max-width: 576px)"
+                            srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/s-about-img.jpg/resize?size=576&auth=MTcwNDcxNzM2NQ__">
+                    <source media="(max-width: 968px)"
+                            srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/s-about-img.jpg/resize?size=968&auth=MTcwNDcxNzM2NQ__">
+                    <source media="(min-width: 969px)"
+                            srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/s-about-img.jpg/resize?size=768&auth=MTcwNDcxNzM2NQ__">
+                    <img class="img-fluid" src="img/s-about-img.jpg">
+                </picture>
             </div>
             <div class="col-lg-6 col-md-12 about-right">
                 <h1>Together, We Can <br>
@@ -337,8 +377,9 @@
                 <div class="force-scroll not-mobile">
                     <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
                             seamless="seamless"
-                            src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true" title="donor wall for website"
-                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"></iframe>
+                            src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
+                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
+                            title="donor wall for website"></iframe>
                 </div>
             </div>
             <div class="col-lg-6 contact-right">
@@ -347,15 +388,23 @@
                         scrolling="no" seamless="seamless"
                         src="https://donorbox.org/embed/fuhsdgives"
                         style="max-width: 500px; min-width: 310px; max-height:none!important"
-                        width="100%" title="donation form"></iframe>
+                        title="donation form" width="100%"></iframe>
                 <p class="payment-method">
-                    We Accept : <img alt="Visa, Mastercard, American Express, Discover" height="29"
-                                     loading="lazy" src="img/payment-sm.png">
+                    We Accept :
+                    <picture>
+                        <source media="(max-width: 968px)"
+                                srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/payment-sm.png/resize?size=210&auth=MTcwNDcxNzM2NQ__">
+                        <source media="(min-width: 969px)"
+                                srcset="https://pixboost.com/api/2/img/https://fuhsdgives.org/img/payment-sm.png/resize?size=210&auth=MTcwNDcxNzM2NQ__">
+                        <img alt="Visa, Mastercard, American Express, Discover" height="29"
+                             loading="lazy" src="img/payment-sm.png">
+                    </picture>
                 </p>
                 <div class="force-scroll only-mobile">
                     <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
                             seamless="seamless" src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
-                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important" title="mobile donor wall widhet"></iframe>
+                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
+                            title="mobile donor wall widhet"></iframe>
                 </div>
             </div>
         </div>
@@ -393,7 +442,11 @@
     </div>
 </footer>
 <!-- End footer Area -->
-
+<script data-api-key="MTcwNDcxNzM2NQ__"
+        data-autoload=""
+        id="pb-script"
+        src="js/vendor/pixboost.bundle.min.js"
+        type="text/javascript"></script>
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
 
 <script crossorigin="anonymous"

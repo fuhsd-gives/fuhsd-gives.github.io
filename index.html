@@ -370,12 +370,16 @@
                     </p>
                 </div>
                 <script paypalExpress="false" src="https://donorbox.org/widget.js"></script>
-                <div class="force-scroll not-mobile">
-                    <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
+                <div class="force-scroll not-mobile" id="pcContainer">
+                    <iframe frameborder="0" id="pcComments" loading="lazy" name="donorbox"
+                            scrolling="no"
                             seamless="seamless"
                             src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
                             style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
                             title="donor wall for website"></iframe>
+                    <a class="refresh-indicator" href="#refresh-pcComments">
+                        Click to Refresh
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 contact-right">
@@ -396,11 +400,17 @@
                              loading="lazy" src="img/payment-sm.png">
                     </picture>
                 </p>
-                <div class="force-scroll only-mobile">
-                    <iframe frameborder="0" loading="lazy" name="donorbox" scrolling="no"
-                            seamless="seamless" src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
-                            style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
-                            title="mobile donor wall widhet"></iframe>
+                <div class="force-scroll only-mobile" id="mobileContainer">
+                    <div>
+                        <iframe frameborder="0" id="mobileComments" loading="lazy" name="donorbox"
+                                scrolling="no" seamless="seamless"
+                                src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
+                                style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
+                                title="mobile donor wall widhet"></iframe>
+                    </div>
+                    <a class="refresh-indicator" href="#refresh-mobileComments">
+                        Refresh
+                    </a>
                 </div>
             </div>
         </div>
@@ -426,9 +436,7 @@
                 <a href="mailto:fuhsdgives@gmail.com"><i class="fa fa-envelope"></i></a>
                 <a href="#0"><i class="fa fa-phone fa-flip-horizontal"></i></a>
             </div>
-            <p class="footer-text m-0" id="copyright">
-
-            </p>
+            <p class="footer-text m-0" id="copyright"></p>
             <p class="footer-text mt-1 mb-0">
                 This organization is a partner of <a
                     href="http://www.bayecho.org/" rel="noopener" target="_blank">BayEcho</a>, a 501(c)(3) nonprofit

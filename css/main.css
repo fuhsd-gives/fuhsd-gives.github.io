@@ -1998,11 +1998,6 @@ nav {
       margin-bottom: 10px; }
     .donate-area .contact-left .single-info {
       margin-bottom: 30px; }
-    .donate-area .contact-left .force-scroll {
-      height: 300px;
-      overflow: hidden; }
-    .donate-area .contact-left .force-scroll:hover {
-      overflow-y: scroll; }
   .donate-area .contact-right .form-control {
     border-radius: 0;
     background-color: transparent;
@@ -2025,6 +2020,35 @@ nav {
     width: 100%; }
   .donate-area .contact-right .payment-method {
     color: black; }
+    @media (max-width: 768px) {
+      .donate-area .contact-right .payment-method {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; } }
+
+.force-scroll {
+  height: 300px;
+  position: relative; }
+  .force-scroll iframe {
+    pointer-events: none; }
+  .force-scroll .refresh-indicator {
+    position: absolute;
+    right: 1.5rem;
+    top: 12.5px;
+    font-size: 110%; }
+    @media (min-width: 769px) {
+      .force-scroll .refresh-indicator {
+        top: 13px; } }
 
 .footer-area {
   background-color: #fff;

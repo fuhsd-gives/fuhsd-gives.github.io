@@ -88,6 +88,13 @@ $(document).ready(function () {
                             }
 
                         });
+                    }else if(this.hash.includes('refresh')){
+                        event.preventDefault();
+                        target = $('#'+this.hash.split('-')[1]);
+                        target.load(function(){
+                           target.parent().animate({scrollTop:0}, 250);
+                        });
+                        target.attr('src',target.attr('src'));
                     }
                 }
             }
@@ -137,8 +144,19 @@ $(document).ready(function () {
 
     $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">FUHSD Gives</a>\n');
 
-    $('#donateForm').on('load', function () {
-
+    $('#pcComments').on('load', function () {
+        if($('#pcContainer').getNiceScroll().length == 0) {
+            $('#pcContainer').niceScroll();
+        }else{
+            $('#pcContainer').getNiceScroll().resize();
+        }
     });
 
+    $('#mobileComments').on('load', function () {
+        if($('#mobileContainer').getNiceScroll().length == 0) {
+            $('#mobileContainer').niceScroll();
+        }else{
+            $('#mobileContainer').getNiceScroll().resize();
+        }
+    });
 });

@@ -45,18 +45,15 @@
     <meta charset="UTF-8">
     <!-- Site Title -->
     <title>FUHSD Gives - Give Back to the Community</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700&display=swap"
-          rel="stylesheet">
-    <!--
-    CSS
-    ============================================= -->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700&display=swap"></noscript>
     <link href="css/linearicons.css" rel="stylesheet">
-    =
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preload" href="css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/font-awesome.min.css"></noscript>
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/nice-select.css" rel="stylesheet">
-    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></noscript>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
@@ -105,8 +102,6 @@
             </div>
             <div class="modal-body">
                 <div class="text-description"></div>
-                <div class="resources-des">Resource Links:</div>
-                <div class="links"></div>
             </div>
             <div class="modal-footer flex-row justify-content-end align-items-center">
                 <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
@@ -357,19 +352,21 @@
                     <p>
                         All donations to charities will be documented and public at all times <a
                             href="https://docs.google.com/spreadsheets/d/1Bt_hDzc8I8-cb9vHVIOFvsd3n_a1PDqa7gdn0-xzVN4/edit?usp=sharing"
-                            rel="noopener" target="_blank">here</a>! Email us at
-                        <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a> if you’d like to suggest a
-                        charity.
+                            rel="noopener" target="_blank">here</a>!
+
+<!--                        Email us at-->
+<!--                        <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a> if you’d like to suggest a-->
+<!--                        charity.-->
                     </p>
                 </div>
-                <div class="single-info">
-                    <h4>Student-Run</h4>
-                    <p>
-                        We, FUHSD Gives, are students from all across the FUHSD district who want to make a meaningful
-                        impact. Email us at <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a> if you have
-                        any questions!
-                    </p>
-                </div>
+<!--                <div class="single-info">-->
+<!--                    <h4>Student-Run</h4>-->
+<!--                    <p>-->
+<!--                        We, FUHSD Gives, are students from all across the FUHSD district who want to make a meaningful-->
+<!--                        impact. Email us at <a href="mailto:fuhsdgives@gmail.com">fuhsdgives@gmail.com</a> if you have-->
+<!--                        any questions!-->
+<!--                    </p>-->
+<!--                </div>-->
                 <script paypalExpress="false" src="https://donorbox.org/widget.js"></script>
                 <div class="force-scroll not-mobile" id="pcContainer">
                     <iframe frameborder="0" id="pcComments" loading="lazy" name="donorbox"

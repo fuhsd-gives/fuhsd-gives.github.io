@@ -1635,8 +1635,28 @@ nav {
   height: 48px !important; }
 
 .banner-area {
-  background: no-repeat center center/cover;
   max-height: calc(100vh - 140px); }
+  @media only screen and (min-width: 0px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=300&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 300px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=600&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 600px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=900&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 900px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1200&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 1200px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1500&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 1500px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1800&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+  @media only screen and (min-width: 1800px) {
+    .banner-area {
+      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=2100&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
   @media (max-width: 767px) {
     .banner-area .fullscreen {
       height: 700px !important; } }

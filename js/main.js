@@ -1,12 +1,15 @@
 $(document).ready(function () {
     "use strict";
 
+    let isMobile = $(window).width() < 576;
+
     var window_width = $(window).width(),
         window_height = window.innerHeight,
         header_height = $(".default-header").height(),
         header_height_static = $(".site-header.static").outerHeight(),
         fitscreen = window_height - header_height;
 
+    console.info($.position.scrollbarWidth());
 
     $(".fullscreen").css("height", window_height);
     $(".fitscreen").css("height", fitscreen);
@@ -32,7 +35,7 @@ $(document).ready(function () {
 
     $('.nav-item a:first').tab('show');
 
-    $('#about').css('top', -(window_height - $('.about-area').height() + ($(window).width() < 576 ? 0 : ($('header').outerHeight()))) / 2);
+    $('#about').css('top', -(window_height - $('.about-area').height() + (isMobile ? 0 : ($('header').outerHeight()))) / 2);
 
     // Select all links with hashes
     $('a[href*="#"]')
@@ -95,6 +98,8 @@ $(document).ready(function () {
                            target.parent().animate({scrollTop:0}, 250);
                         });
                         target.attr('src',target.attr('src'));
+                    }else if(this.hash.includes('ignore')){
+                        event.preventDefault();
                     }
                 }
             }
@@ -127,7 +132,7 @@ $(document).ready(function () {
         modal.find('.text-description').text(text);
     });
 
-    $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">FUHSD Gives</a>\n');
+    $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">Santa Clara Gives</a>\n');
 
     $('#pcComments').on('load', function () {
         if($('#pcContainer').getNiceScroll().length == 0) {

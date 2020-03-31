@@ -1454,49 +1454,51 @@ body {
   .menu-bar span {
     color: #000;
     font-size: 24px; }
+  @media (min-width: 576px) {
+    .menu-bar {
+      display: none; } }
 
 .main-menubar {
   position: relative; }
 
-nav {
-  margin-right: 70px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  -webkit-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
-  transform-origin: 100% 50%; }
+@media (max-width: 767px) {
+  nav {
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    top: 47px;
+    text-align: right;
+    padding: 20px 0;
+    z-index: 5;
+    background: #fff;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    transform-origin: 100% 0%; }
+    nav a {
+      color: #8b0e05 !important; }
+      nav a:hover {
+        color: #8b0e05; }
+    nav.hide {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0); } }
+
+nav a {
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 20px;
+  display: inline-block; }
   @media (max-width: 767px) {
-    nav {
-      margin-right: 0;
-      position: absolute;
-      right: 0;
-      top: 47px;
-      text-align: right;
-      padding: 20px 0;
-      z-index: 5;
-      background: #fff; }
-      nav a {
-        color: #8b0e05 !important; }
-        nav a:hover {
-          color: #8b0e05; } }
-  nav.hide {
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0); }
-  nav a {
-    color: #000;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0 25px;
-    display: inline-block; }
-    @media (max-width: 767px) {
-      nav a {
-        margin: 5px 25px; } }
-    nav a:hover {
-      color: #8b0e05; }
+    nav a {
+      margin: 5px 25px; } }
+  nav a:hover {
+    color: #8b0e05; }
 
 .section-gap {
   padding: 120px 0; }
@@ -1607,6 +1609,9 @@ nav {
 #aboutModal .modal-body {
   font-size: 115%; }
 
+body.modal-open header {
+  width: calc(100% - 16px) !important; }
+
 .modal h2 {
   font-size: 20px !important;
   font-weight: 600 !important; }
@@ -1638,25 +1643,25 @@ nav {
   max-height: calc(100vh - 140px); }
   @media only screen and (min-width: 0px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=300&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=300&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 300px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=600&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=600&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 600px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=900&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=900&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 900px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1200&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=1200&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 1200px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1500&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=1500&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 1500px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=1800&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=1800&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media only screen and (min-width: 1800px) {
     .banner-area {
-      background: url("https://pixboost.com/api/2/img/https://fuhsdgives.org/img/header-bg.jpg/resize?size=2100&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover, url(../img/header-bg.jpg) no-repeat center center/cover; } }
+      background: url("https://pixboost.com/api/2/img/https://santaclaragives.org/img/header-bg.jpg/resize?size=2100&auth=MTcwNDcxNzM2NQ__") no-repeat center center/cover; } }
   @media (max-width: 767px) {
     .banner-area .fullscreen {
       height: 700px !important; } }
@@ -2052,6 +2057,16 @@ nav {
     @media (min-width: 769px) {
       .force-scroll .refresh-indicator {
         top: 13px; } }
+
+.teams-area {
+  background-color: #222; }
+  .teams-area .coming-soon {
+    color: white;
+    padding: 20vh;
+    text-align: center; }
+  .teams-area .header-text h1 {
+    color: black;
+    margin-bottom: 25px; }
 
 .footer-area {
   background-color: #fff;

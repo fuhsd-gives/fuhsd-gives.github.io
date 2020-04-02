@@ -1528,6 +1528,29 @@ nav a {
   .only-mobile {
     display: none !important; } }
 
+.scale-in {
+  -ms-transform: scale(0.8);
+  /* IE 9 */
+  -ms-transform-origin: 50% 50%;
+  -moz-transform: scale(0.8);
+  /* Firefox */
+  -moz-transform-origin: 50% 50%;
+  -o-transform: scale(0.8);
+  /* Opera */
+  -o-transform-origin: 50% 50%;
+  -webkit-transform: scale(0.8);
+  /* Safari And Chrome */
+  -webkit-transform-origin: 50% 50%;
+  transform: scale(0.8);
+  /* Standard Property */
+  transform-origin: 50% 50%;
+  /* Standard Property */
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out; }
+
 .p1-gradient-bg, .primary-btn, .primary-btn:after, .banner-content .clock_sec, .head-btn:hover, .callto-wrap, .single-project .content .content-overlay, .single-vol .content .content-overlay {
   background-image: -moz-linear-gradient(0deg, #f40f68 0%, #f86e3d 55%, #fbcd11 100%);
   background-image: -webkit-linear-gradient(0deg, #f40f68 0%, #f86e3d 55%, #fbcd11 100%);

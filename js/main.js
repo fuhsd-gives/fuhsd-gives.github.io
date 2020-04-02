@@ -158,10 +158,13 @@ $(document).ready(function () {
     eventer(messageEvent,function(e) {
         var key = e.message ? "message" : "data";
         var data = e[key];
-        console.info(data);
         if((""+data).includes("donation-completed:")){
             let body = JSON.parse(data.substring(data.indexOf(':') + 1));
             console.info(body);
+            if(isMobile) {
+                $('#donate > div.container > div.row.d-flex.justify-content-center > div.col-lg-6.contact-right').addClass('scale-in');
+                $('#mobileContainer').getNiceScroll().resize();
+            }
         }
     },false);
 });

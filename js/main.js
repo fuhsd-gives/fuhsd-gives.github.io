@@ -74,7 +74,7 @@ $(document).ready(function () {
                 } else if (this.hash) {
                     if (this.hash.includes('cModal')) {
                         event.preventDefault();
-                        target = $('#'+this.hash.split('-')[1]);
+                        target = $('#' + this.hash.split('-')[1]);
                         $('.modal').modal('hide');
                         $('html, body').animate({
                             scrollTop: target.offset().top
@@ -91,14 +91,14 @@ $(document).ready(function () {
                             }
 
                         });
-                    }else if(this.hash.includes('refresh')){
+                    } else if (this.hash.includes('refresh')) {
                         event.preventDefault();
-                        target = $('#'+this.hash.split('-')[1]);
-                        target.load(function(){
-                           target.parent().animate({scrollTop:0}, 250);
+                        target = $('#' + this.hash.split('-')[1]);
+                        target.load(function () {
+                            target.parent().animate({scrollTop: 0}, 250);
                         });
-                        target.attr('src',target.attr('src'));
-                    }else if(this.hash.includes('ignore')){
+                        target.attr('src', target.attr('src'));
+                    } else if (this.hash.includes('ignore')) {
                         event.preventDefault();
                     }
                 }
@@ -124,7 +124,7 @@ $(document).ready(function () {
             case 'business':
                 title = 'Small Business Relief';
                 text = 'Opportunity Fund’s Small Business Relief Fund aims to raise support for small businesses impacted by the COVID-19 crisis — especially those run by women, people of color and immigrants. The Small Business Relief Fund provides relief to struggling self-employed and small business owners. Restaurant Workers’ Community Foundation is an advocacy and action nonprofit created by and for restaurant workers. The RCWF COVID-19 Fund will be used as listed: 50% for direct relief to individual restaurant workers, 25% for non-profit organizations serving restaurant workers in crisis, and 25% for zero-interest loans for restaurants to get back up and running.';
-                 break;
+                break;
             default:
                 window.alert('HUH????>>>');
         }
@@ -135,18 +135,33 @@ $(document).ready(function () {
     $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">Santa Clara Gives</a>\n');
 
     $('#pcComments').on('load', function () {
-        if($('#pcContainer').getNiceScroll().length == 0) {
+        if ($('#pcContainer').getNiceScroll().length == 0) {
             $('#pcContainer').niceScroll();
-        }else{
+        } else {
             $('#pcContainer').getNiceScroll().resize();
         }
     });
 
     $('#mobileComments').on('load', function () {
-        if($('#mobileContainer').getNiceScroll().length == 0) {
+        if ($('#mobileContainer').getNiceScroll().length == 0) {
             $('#mobileContainer').niceScroll();
-        }else{
+        } else {
             $('#mobileContainer').getNiceScroll().resize();
         }
     });
+
+    // Create IE + others compatible event handler
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+    eventer(messageEvent,function(e) {
+        var key = e.message ? "message" : "data";
+        var data = e[key];
+        console.info(data);
+        if((""+data).includes("donation-completed:")){
+            let body = JSON.parse(data.substring(data.indexOf(':') + 1));
+            console.info(body);
+        }
+    },false);
 });

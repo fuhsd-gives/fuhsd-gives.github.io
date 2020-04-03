@@ -318,7 +318,7 @@ $(document).ready(function () {
             }
 
             visPx();
-            $(document).ready(visPx());
+            $(document).ready(visPx);
             $(win).on("resize scroll", visPx);
         });
     };

@@ -2103,17 +2103,21 @@ body.modal-open header {
       .leaderboard-area .about-right {
         padding: 0 2px !important;
         margin-top: 70px; } }
-  @media (max-width: 1199px) {
+  .leaderboard-area .about-left {
+    padding-right: calc(15px + 5%); }
+    @media (max-width: 1199px) {
+      .leaderboard-area .about-left {
+        padding-right: 15px; }
+      .leaderboard-area .about-left h1 {
+        font-size: 25px; }
+      .leaderboard-area .about-left {
+        margin-top: 70px; } }
+    .leaderboard-area .about-left p {
+      margin-bottom: 26px;
+      color: #868b8c; }
     .leaderboard-area .about-left h1 {
-      font-size: 25px; }
-    .leaderboard-area .about-left {
-      margin-top: 70px; } }
-  .leaderboard-area .about-left p {
-    margin-bottom: 26px;
-    color: #868b8c; }
-  .leaderboard-area .about-left h1 {
-    color: #fff;
-    margin-bottom: 25px; }
+      color: #fff;
+      margin-bottom: 25px; }
 
 .footer-area {
   background-color: #fff;

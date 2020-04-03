@@ -9,8 +9,6 @@ $(document).ready(function () {
         header_height_static = $(".site-header.static").outerHeight(),
         fitscreen = window_height - header_height;
 
-    console.info($.position.scrollbarWidth());
-
     $(".fullscreen").css("height", window_height);
     $(".fitscreen").css("height", fitscreen);
 
@@ -155,16 +153,173 @@ $(document).ready(function () {
     var eventer = window[eventMethod];
     var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-    eventer(messageEvent,function(e) {
+    eventer(messageEvent, function (e) {
         var key = e.message ? "message" : "data";
         var data = e[key];
-        if((""+data).includes("donation-completed:")){
+        if (("" + data).includes("donation-completed:")) {
             let body = JSON.parse(data.substring(data.indexOf(':') + 1));
             console.info(body);
-            if(isMobile) {
+            if (isMobile) {
                 $('#donate > div.container > div.row.d-flex.justify-content-center > div.col-lg-6.contact-right').addClass('scale-in');
-                $('#mobileContainer').getNiceScroll().resize();
+                setTimeout(function () {
+                    let targe = $('#mobileComments');
+                    targe.load(function () {
+                        targe.parent().animate({scrollTop: 0}, 250);
+                        setTimeout(function () {
+                            $('#mobileContainer').getNiceScroll().resize();
+                        }, 260);
+                    });
+                    targe.attr('src', targe.attr('src'));
+                }, 1000)
             }
         }
-    },false);
+    }, false);
+
+    let zingQ = false;
+    let zingShown = false;
+    let pSpam = false;
+    $("#leaderboard").inViewport(function (px) {
+        if (px) {
+            // console.info(px);
+            if (zingchart && !zingShown && !pSpam) {
+                // console.info("prevent spam pls");
+                pSpam = true;
+                loadGraph();
+            } else {
+                if (!zingQ && !pSpam) {
+                    zingQ = true;
+                    // console.info('setting listener');
+                    $('#zing-src').on('load', function () {
+                        if (!pSpam) {
+                            pSpam = true;
+                            loadGraph();
+                        }
+                    })
+                }
+            }
+        }
+
+        function loadGraph() {
+            // console.info('loading graph');
+            let respArr;
+            $.ajax({
+                url: "https://coinwar.santaclaragives.org/data",
+                // url: "http://localhost:8080/data",
+                method: "GET",
+            }).done(function (data) {
+                respArr = data.response;
+                if (!respArr) {
+                    setTimeout(function () {
+                        pSpam = false;
+                    }, 1000);
+                    return;
+                }
+                respArr.sort((a, b) => (a.total > b.total) ? 1 : -1);
+                createGraph();
+                zingShown = true;
+            }).fail(function (xhr) {
+                console.error(xhr);
+                setTimeout(function () {
+                    pSpam = false;
+                }, 1000);
+            });
+
+            function createGraph() {
+                // console.info('calling create graph');
+
+                let highestAmt = respArr[respArr.length - 1].total;
+
+                let createLabel = (text, index) => {
+                    return {
+                        text: text,
+                        fontColor: '#FFFFFF',
+                        fontFamily: '"Trebuchet MS", Helvetica, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 'normal',
+                        flat: true, // no event listener
+                        hook: 'scale:name=scale-x;index=' + index + ';',
+                        offsetX: '60px',
+                        width: '110px',
+                        shadow: false,
+                        textAlign: 'left'
+                    }
+                };
+
+                let graphConfig = {
+                    type: 'hbar',
+                    theme: 'dark',
+                    plot: {
+                        animation: {
+                            delay: 500,
+                            effect: 'ANIMATION_EXPAND_BOTTOM',
+                            sequence: 0,
+                            speed: 1800
+                        },
+                        stacked: true
+                    },
+                    plotarea: {
+                        margin: 'dynamic',
+                        backgroundColor: 'transparent'
+                    },
+                    backgroundColor: 'transparent',
+
+                    scaleX: {
+                        visible: false
+                    },
+                    scaleY: {
+                        format: '$%v',
+                        guide: {
+                            visible: false
+                        }
+                    },
+                    labels: respArr.map(function (obje, oIndex) {
+                        if (+obje.total < highestAmt / 2) {
+                            return createLabel(obje.school.substring(0, obje.school.indexOf(' ')), oIndex);
+                        } else {
+                            return createLabel(obje.school, oIndex);
+                        }
+                    }),
+                    tooltip: {
+                        text: '$%total'
+                    },
+                    series: [
+                        {
+                            values: respArr.map(function (obj) {
+                                return +obj.total
+                            }),
+                            backgroundColor: '#4AC3B9 #6DAACE',
+                            borderRadius: '0 6 6 0'
+                        }
+                    ]
+                };
+                zingchart.render({
+                    id: 'leaderboard-bars',
+                    data: graphConfig,
+                    height: '100%',
+                    width: '100%'
+                });
+            }
+
+
+        }
+    })
 });
+
+// Plugin @RokoCB :: Return the visible amount of px
+// of any element currently in viewport.
+// stackoverflow.com/questions/24768795/
+;(function ($, win) {
+    $.fn.inViewport = function (cb) {
+        return this.each(function (i, el) {
+            function visPx() {
+                var H = $(this).height(),
+                    r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
+                return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
+            }
+
+            visPx();
+            $(document).ready(visPx());
+            $(win).on("resize scroll", visPx);
+        });
+    };
+}($, window));

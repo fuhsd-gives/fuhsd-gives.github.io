@@ -90,7 +90,7 @@
                         <a href="#project">Projects</a>
                         <a href="#about">About</a>
                         <a href="#donate">Donate</a>
-                        <a href="#teams">Teams</a>
+                        <a href="#leaderboard">Leaderboard</a>
                     </nav>
                     <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
                 </div>
@@ -371,9 +371,10 @@
                 <div class="single-info">
                     <h4>Complete Transparency</h4>
                     <p>
-                        All donations to charities will be documented and public at all times <a
+                        All donations to charities will be documented and public at all times. Search <a
                             href="https://docs.google.com/spreadsheets/d/1Bt_hDzc8I8-cb9vHVIOFvsd3n_a1PDqa7gdn0-xzVN4/edit?usp=sharing"
-                            rel="noopener" target="_blank">here</a>!
+                            rel="noopener" target="_blank">this</a> spreadsheet for your receipt number to see who was
+                        helped by your funding.
 
                         <!--                        Email us at-->
                         <!--                        <a href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a> if you’d like to suggest a-->
@@ -424,7 +425,7 @@
                                 scrolling="no" seamless="seamless"
                                 src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
                                 style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
-                                title="mobile donor wall widhet"></iframe>
+                                title="mobile donor wall widget"></iframe>
                     </div>
                     <a class="refresh-indicator" href="#refresh-mobileComments">
                         Refresh
@@ -436,16 +437,32 @@
 </section>
 <!-- End donate Area -->
 
-<!-- Start teams Area-->
-<section class="teams-area relative">
-    <div class="target-div" id="teams" style="position: absolute"></div>
-    <div class="container-fluid">
-        <div class="coming-soon">
-            Coin Wars Coming Soon :))
+<!-- Start leaderboard Area-->
+<section class="leaderboard-area relative">
+    <div class="target-div" id="leaderboard" style="position: absolute; top: -20px"></div>
+    <div class="container">
+        <div class="row d-flex justify-content-end align-items-center">
+            <div class="col-lg-6 col-md-12 about-left">
+                <h1>Compete Against YOUR Community, <br>
+                    For YOUR Community</h1>
+                <p>
+                    We strive to support organizations and businesses in need of financial assistance due to the
+                    COVID-19 pandemic together, as a Santa Clara community. As residents of Santa Clara County, our
+                    lives have
+                    been changed drastically by the novel coronavirus. But, we can fight this pandemic together as a
+                    community.
+                </p>
+                <a class="primary-btn mt-20 text-uppercase" href="#donate" style="margin: 0">Donate Now<span
+                        class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-12 about-right no-padding">
+                <div id="leaderboard-bars"></div>
+            </div>
         </div>
     </div>
 </section>
-<!-- End teams Area-->
+<!-- End leaderboard Area-->
 
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
@@ -487,6 +504,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
+<script async id="zing-src" src="https://cdn.zingchart.com/zingchart.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

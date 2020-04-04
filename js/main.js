@@ -331,21 +331,11 @@ $(document).ready(function () {
                     r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
                 return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
             }
-
             visPx();
             $(win).on("resize scroll", visPx);
         });
     };
 }($, window));
-
-function totalFormatter(dataa) {
-    var field = this.field;
-    return '$' + dataa.map(function (row) {
-        return +row[field].substring(1)
-    }).reduce(function (sum, i) {
-        return sum + i
-    }, 0)
-}
 
 function tableAjaxRequest(params){
     let tableDataUrl = 'https://coinwar.santaclaragives.org/standings';
@@ -353,7 +343,6 @@ function tableAjaxRequest(params){
         url: tableDataUrl,
         method: "GET",
     }).done(function (data) {
-        console.info(data);
         params.success(data);
     }).fail(function (xhr) {
         console.error(xhr);

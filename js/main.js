@@ -338,9 +338,9 @@ $(document).ready(function () {
     };
 }($, window));
 
-function totalFormatter(data) {
+function totalFormatter(dataa) {
     var field = this.field;
-    return '$' + data.map(function (row) {
+    return '$' + dataa.map(function (row) {
         return +row[field].substring(1)
     }).reduce(function (sum, i) {
         return sum + i

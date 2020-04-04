@@ -346,3 +346,16 @@ function totalFormatter(data) {
         return sum + i
     }, 0)
 }
+
+function tableAjaxRequest(params){
+    let tableDataUrl = 'https://coinwar.santaclaragives.org/standings';
+    $.ajax({
+        url: tableDataUrl,
+        method: "GET",
+    }).done(function (data) {
+        params.success(data);
+    }).fail(function (xhr) {
+        console.error(xhr);
+        params.success([]);
+    });
+}

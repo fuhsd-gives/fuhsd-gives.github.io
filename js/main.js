@@ -353,6 +353,7 @@ function tableAjaxRequest(params){
         url: tableDataUrl,
         method: "GET",
     }).done(function (data) {
+        console.info(data);
         params.success(data);
     }).fail(function (xhr) {
         console.error(xhr);

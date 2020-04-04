@@ -65,6 +65,11 @@
         <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
     </noscript>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link as="style" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" onload="this.onload=null;this.rel='stylesheet'"
+          rel="preload">
+    <noscript>
+        <link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+    </noscript>
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
@@ -85,8 +90,8 @@
                                 <img alt="Santa Clara Gives logo" height="30" src="img/n-logo.png"
                                      style="position: absolute; left: 10%; top: 0; bottom: 0; transform: scale(1.2)">
                             </picture>
-<!--                            <img alt="Santa Clara Gives logo" height="30" src="img/n-logo.png"-->
-<!--                                 style="position: absolute; left: 10%; top: 0; bottom: 0; transform: scale(1.2)">-->
+                            <!--                            <img alt="Santa Clara Gives logo" height="30" src="img/n-logo.png"-->
+                            <!--                                 style="position: absolute; left: 10%; top: 0; bottom: 0; transform: scale(1.2)">-->
                         </div>
                     </a>
                 </div>
@@ -140,14 +145,45 @@
                 </button>
             </div>
             <div class="modal-body">
-                We, Santa Clara Gives, are students from all across the Santa Clara County school districts. We realized
-                that it can be so easy
-                to feel alone and helpless in this unique time, but as a Santa Clara community, we can make a meaningful
-                impact. We strive to support organizations and businesses in need of financial assistance due to the
-                COVID-19 pandemic together, as a Santa Clara community. As residents of this County, our lives have
-                been changed drastically by the novel coronavirus. But, we can fight this pandemic together. If you
-                have any questions for us, feel free to email us at <a href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a>.
+                We, Santa Clara Gives, are students from all across the county. We realized that it can be so easy to
+                feel alone and helpless in this unique time, but as a community, we can make a meaningful impact. We
+                strive to support organizations and businesses in need of financial assistance due to the COVID-19
+                pandemic together. If you have any questions for us, feel free to email us at <a
+                    href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a>.
 
+            </div>
+            <div class="modal-footer flex-row justify-content-end align-items-center">
+                <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
+                        class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="standingsModalLabel" class="modal fade" id="standingsModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="standingsModalLabel">Donation Standings</h2>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table data-search="true" data-search-text="" data-show-footer="true"
+                       data-toggle="table"
+                       data-url="https://coinwar.santaclaragives.org/standings"
+                       id="standings-table">
+                    <thead>
+                    <tr>
+                        <th data-field="standing" data-footer-formatter="totalFormatter">#</th>
+                        <th data-field="school" data-footer-formatter="totalFormatter">School Name</th>
+                        <th data-field="total" data-footer-formatter="totalFormatter">Dollars Donated</th>
+                    </tr>
+                    </thead>
+                </table>
             </div>
             <div class="modal-footer flex-row justify-content-end align-items-center">
                 <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
@@ -233,8 +269,8 @@
                     <a data-project="medical" data-target="#projectModal" data-toggle="modal" href="javascript:void(0)">
                         <h2>Medical
                             Supplies</h2></a>
-                    <p>Hospitals are rapidly running out of supplies. Direct Relief is coordinating with businesses to
-                        provide personal protective equipment to health workers.</p>
+                    <p>Hospitals are rapidly running out of supplies. Santa Clara Valley Medical Center is the largest
+                        provider of essential health services to vulnerable populations in our region.</p>
                     <a class="text-uppercase" data-project="medical" data-target="#projectModal" data-toggle="modal"
                        href="javascript:void(0)">read more</a>
                 </div>
@@ -305,7 +341,7 @@
                        href="javascript:void(0)"><h2>Small
                         Business Relief</h2></a>
                     <p>The economic and personal impacts from the COVID-19 pandemic are increasingly devastating for
-                        individuals, families and small businesses across the U.S.</p>
+                        small businesses across the U.S.</p>
                     <a class="text-uppercase" data-project="business" data-target="#projectModal" data-toggle="modal"
                        href="javascript:void(0)">read more</a>
                 </div>
@@ -338,10 +374,9 @@
                     Make A Difference</h1>
                 <p>
                     We strive to support organizations and businesses in need of financial assistance due to the
-                    COVID-19 pandemic together, as a Santa Clara community. As residents of Santa Clara County, our
-                    lives have
-                    been changed drastically by the novel coronavirus. But, we can fight this pandemic together as a
-                    community.
+                    COVID-19 pandemic together, as a Santa Clara County community. As residents of Santa Clara County,
+                    our lives have been changed drastically by the novel coronavirus. But, we can fight this pandemic
+                    together.
                 </p>
                 <button class="primary-btn mt-20 text-uppercase" data-project="local" data-target="#aboutModal"
                         data-toggle="modal"
@@ -396,6 +431,8 @@
                 <!--                    </p>-->
                 <!--                </div>-->
                 <script paypalExpress="false" src="js/vendor/donorbox-widget.min.js"></script>
+                <div class="fade-gradient-bottom not-mobile">
+                </div>
                 <div class="force-scroll not-mobile" id="pcContainer">
                     <iframe frameborder="0" id="pcComments" loading="lazy" name="donorbox"
                             scrolling="no"
@@ -427,6 +464,7 @@
                 </p>
                 <div class="force-scroll only-mobile" id="mobileContainer">
                     <div>
+
                         <iframe frameborder="0" id="mobileComments" loading="lazy" name="donorbox"
                                 scrolling="no" seamless="seamless"
                                 src="https://donorbox.org/embed/fuhsdgives?only_donor_wall=true"
@@ -449,18 +487,19 @@
     <div class="container">
         <div class="row d-flex justify-content-end align-items-center">
             <div class="col-lg-6 col-md-12 about-left">
-                <h1>Compete Against YOUR Community, <br>
-                    For YOUR Community</h1>
+                <h1>Compete For Your <br> Community</h1>
                 <p>
-                    We strive to support organizations and businesses in need of financial assistance due to the
-                    COVID-19 pandemic together, as a Santa Clara community. As residents of Santa Clara County, our
-                    lives have
-                    been changed drastically by the novel coronavirus. But, we can fight this pandemic together as a
-                    community.
+                    Don’t see your school? Donate! All it takes to make a difference is YOUR donation. These trying
+                    times test our humanity, which is why it is so essential for us to work together as a community. The
+                    healthcare workers on the frontlines, vulnerable families, and small business owners rely on your
+                    help. Want to add your school to the list? Email us at <a href="mailto:santaclaragives+query@gmail.com"
+                                                                              style="color: #5f9ea0">santaclaragives@gmail.com</a>
+                    to learn more.
                 </p>
-                <a class="primary-btn mt-20 text-uppercase" href="#donate" style="margin: 0">Donate Now<span
-                        class="lnr lnr-arrow-right"></span>
-                </a>
+                <button class="primary-btn mt-20 text-uppercase" data-target="#standingsModal"
+                        data-toggle="modal"
+                        href="#">Full Standings<span class="lnr lnr-arrow-right"></span>
+                </button>
             </div>
             <div class="col-lg-6 col-md-12 about-right no-padding">
                 <div id="leaderboard-bars"></div>
@@ -512,5 +551,6 @@
 <script src="js/jquery.nicescroll.min.js"></script>
 <script async id="zing-src" src="https://cdn.zingchart.com/zingchart.min.js"></script>
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
 </body>
 </html>

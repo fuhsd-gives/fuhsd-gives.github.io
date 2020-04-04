@@ -113,15 +113,15 @@ $(document).ready(function () {
         switch (project) {
             case 'medical':
                 title = 'Medical Supplies';
-                text = 'In the U.S., Direct Relief is delivering protective masks – along with exam gloves and isolation gowns – to health care organizations in areas with confirmed COVID-19 cases. In China, Direct Relief has delivered nearly 800,000 N95 and surgical masks, more than 400,000 gloves, and numerous coveralls, face shields, and shoe covers. The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.';
+                text = 'The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.  Like in any disaster, the best way to help is by making a financial contribution.  Donations will allow the Valley Medical Center Foundation to respond to emergency needs from physicians, first responders and local public health officials.';
                 break;
             case 'local':
                 title = 'Community Non-Profits';
-                text = '1 in 4 people are at risk of hunger in Silicon Valley. With school and business shut downs, the need to support vulnerable families at risk of hunger is more important than ever. Second Harvest is committed to distributing nutritious food to nearly every neighborhood in Silicon Valley and leveraging every available food resource. 1 in 10 people in Silicon Valley receives assistance from Second Harvest. West Valley Community Services and Sunnyvale Community Services work to help those that need financial assistance, including paying rent and utilities, assist with medical costs, purchasing emergency supplies, and more. These local organizations are an integral part of Silicon Valley, especially for families at risk.';
+                text = 'A record number of kids, families and seniors rely on Second Harvest for food every month, and the number is growing. It’s hard to imagine the pain of not being able to feed your family, or going to school on an empty stomach. But the reality is more than 1 in 4 people is at risk of hunger in Silicon Valley. The booming economy has sent the cost of housing soaring, leaving many families and seniors with little left over for food. Even those we depend on to make our community run can’t afford to pay for housing and put nutritious food on the table — cooks, cashiers, health care workers and teachers. With school and business shut downs, the need to support vulnerable families at risk of hunger is more important than ever. Second Harvest is committed to distributing nutritious food to nearly every neighborhood in Silicon Valley and leveraging every available food resource.';
                 break;
             case 'business':
                 title = 'Small Business Relief';
-                text = 'Opportunity Fund’s Small Business Relief Fund aims to raise support for small businesses impacted by the COVID-19 crisis — especially those run by women, people of color and immigrants. The Small Business Relief Fund provides relief to struggling self-employed and small business owners. Restaurant Workers’ Community Foundation is an advocacy and action nonprofit created by and for restaurant workers. The RCWF COVID-19 Fund will be used as listed: 50% for direct relief to individual restaurant workers, 25% for non-profit organizations serving restaurant workers in crisis, and 25% for zero-interest loans for restaurants to get back up and running.';
+                text = 'The economic and personal impacts from the COVID-19 pandemic are increasingly devastating for individuals, families and small businesses across the U.S. Even before a crisis like this, nearly half of the nation’s 30 million small businesses only have enough cash on hand to operate for 15 days without customers. If they shut down, paychecks for millions of workers are in jeopardy, which will have serious impacts on their families, communities and our economy as a whole. Opportunity Fund’s Small Business Relief Fund aims to raise support for small businesses impacted by the COVID-19 crisis — especially those run by women, people of color and immigrants. The Small Business Relief Fund provides relief to struggling self-employed and small business owners.';
                 break;
             default:
                 window.alert('HUH????>>>');
@@ -137,6 +137,10 @@ $(document).ready(function () {
             $('#pcContainer').niceScroll();
         } else {
             $('#pcContainer').getNiceScroll().resize();
+        }
+
+        if (!isMobile && $('.not-mobile.fade-gradient-bottom').width() == 0) {
+            $('.not-mobile.fade-gradient-bottom').css('width', $(this).width());
         }
     });
 
@@ -302,6 +306,17 @@ $(document).ready(function () {
 
 
         }
+    });
+
+    let scrollableDiv = $('.not-mobile.force-scroll');
+    $('.fade-gradient-bottom').on('mousewheel', function (e) {
+        e.preventDefault();
+
+        scrollableDiv.scrollTop(scrollableDiv.scrollTop() + e.originalEvent.deltaY);
+    });
+
+    $('#standingsModal').on('shown.bs.modal', function () {
+        $('#standings-table').bootstrapTable('resetView')
     })
 });
 
@@ -322,3 +337,12 @@ $(document).ready(function () {
         });
     };
 }($, window));
+
+function totalFormatter(data) {
+    var field = this.field;
+    return '$' + data.map(function (row) {
+        return +row[field].substring(1)
+    }).reduce(function (sum, i) {
+        return sum + i
+    }, 0)
+}

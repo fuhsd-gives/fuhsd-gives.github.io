@@ -2022,8 +2022,19 @@ body.modal-open header {
     color: black;
     margin-bottom: 25px; }
 
+.donate-area .fade-gradient-bottom {
+  position: absolute;
+  height: 300px;
+  z-index: 1001;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 0, 36, 0)), color-stop(85%, rgba(9, 9, 121, 0)), to(#f9f9ff));
+  background: -webkit-linear-gradient(top, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 85%, #f9f9ff 100%);
+  background: -o-linear-gradient(top, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 85%, #f9f9ff 100%);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 85%, #f9f9ff 100%); }
+
 .donate-area .contact-left {
   padding-right: calc(5% + 15px); }
+  .donate-area .contact-left .fade-gradient-bottom {
+    height: 420px; }
   @media (max-width: 1199px) {
     .donate-area .contact-left {
       padding-left: 15px; } }
@@ -2077,7 +2088,7 @@ body.modal-open header {
         align-items: center; } }
 
 .force-scroll {
-  height: 300px;
+  height: 420px;
   position: relative; }
   .force-scroll iframe {
     pointer-events: none; }
@@ -2089,6 +2100,10 @@ body.modal-open header {
     @media (min-width: 769px) {
       .force-scroll .refresh-indicator {
         top: 13px; } }
+
+@media (max-width: 768px) {
+  .force-scroll {
+    height: 300px; } }
 
 .leaderboard-area {
   background-color: #222;
@@ -2113,7 +2128,7 @@ body.modal-open header {
       .leaderboard-area .about-left {
         margin-top: 70px; } }
     .leaderboard-area .about-left p {
-      margin-bottom: 26px;
+      margin-bottom: 1rem;
       color: #868b8c; }
     .leaderboard-area .about-left h1 {
       color: #fff;

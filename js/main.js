@@ -178,14 +178,16 @@ $(document).ready(function () {
                         }, 260);
                     });
                     targe.attr('src', targe.attr('src'));
-                }, 1000)
-                setTimeout(function(){
-                    $('.after-donate').css({
-                        display: 'unset'
-                    });
-                    $('.after-donate').animate({
-                        opacity: 1,
-                    }, 1000);
+                }, 1000);
+                setTimeout(function () {
+                    if (isMobile) {
+                        $('.after-donate').css({
+                            display: 'unset'
+                        });
+                        $('.after-donate').animate({
+                            opacity: 1,
+                        }, 1000);
+                    }
                 }, 500);
             }
         }

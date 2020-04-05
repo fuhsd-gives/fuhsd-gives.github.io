@@ -113,21 +113,21 @@ $(document).ready(function () {
         switch (project) {
             case 'medical':
                 title = 'Medical Supplies';
-                text = 'The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.  Like in any disaster, the best way to help is by making a financial contribution.  Donations will allow the Valley Medical Center Foundation to respond to emergency needs from physicians, first responders and local public health officials.';
+                text = 'The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.  Like in any disaster, the best way to help is by making a financial contribution.  Donations will allow the <b style="color: unset; font-weight: 600">Valley Medical Center Foundation</b> to respond to emergency needs from physicians, first responders and local public health officials.';
                 break;
             case 'local':
                 title = 'Community Non-Profits';
-                text = 'A record number of kids, families and seniors rely on Second Harvest for food every month, and the number is growing. It’s hard to imagine the pain of not being able to feed your family, or going to school on an empty stomach. But the reality is more than 1 in 4 people is at risk of hunger in Silicon Valley. The booming economy has sent the cost of housing soaring, leaving many families and seniors with little left over for food. Even those we depend on to make our community run can’t afford to pay for housing and put nutritious food on the table — cooks, cashiers, health care workers and teachers. With school and business shut downs, the need to support vulnerable families at risk of hunger is more important than ever. Second Harvest is committed to distributing nutritious food to nearly every neighborhood in Silicon Valley and leveraging every available food resource.';
+                text = 'A record number of kids, families and seniors rely on <b style="color: unset; font-weight: 600">Second Harvest</b> for food every month, and the number is growing. It’s hard to imagine the pain of not being able to feed your family, or going to school on an empty stomach. But the reality is more than 1 in 4 people is at risk of hunger in Silicon Valley. The booming economy has sent the cost of housing soaring, leaving many families and seniors with little left over for food. Even those we depend on to make our community run can’t afford to pay for housing and put nutritious food on the table — cooks, cashiers, health care workers and teachers. With school and business shut downs, the need to support vulnerable families at risk of hunger is more important than ever. Second Harvest is committed to distributing nutritious food to nearly every neighborhood in Silicon Valley and leveraging every available food resource.';
                 break;
             case 'business':
                 title = 'Small Business Relief';
-                text = 'The economic and personal impacts from the COVID-19 pandemic are increasingly devastating for individuals, families and small businesses across the U.S. Even before a crisis like this, nearly half of the nation’s 30 million small businesses only have enough cash on hand to operate for 15 days without customers. If they shut down, paychecks for millions of workers are in jeopardy, which will have serious impacts on their families, communities and our economy as a whole. Opportunity Fund’s Small Business Relief Fund aims to raise support for small businesses impacted by the COVID-19 crisis — especially those run by women, people of color and immigrants. The Small Business Relief Fund provides relief to struggling self-employed and small business owners.';
+                text = 'The economic and personal impacts from the COVID-19 pandemic are increasingly devastating for individuals, families and small businesses across the U.S. Even before a crisis like this, nearly half of the nation’s 30 million small businesses only have enough cash on hand to operate for 15 days without customers. If they shut down, paychecks for millions of workers are in jeopardy, which will have serious impacts on their families, communities and our economy as a whole. <b style="color: unset; font-weight: 600">Opportunity Fund’s Small Business Relief Fund</b> aims to raise support for small businesses impacted by the COVID-19 crisis — especially those run by women, people of color and immigrants. The Small Business Relief Fund provides relief to struggling self-employed and small business owners.';
                 break;
             default:
                 window.alert('HUH????>>>');
         }
         modal.find('.modal-title').text(title);
-        modal.find('.text-description').text(text);
+        modal.find('.text-description').html(text);
     });
 
     $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">Santa Clara Gives</a>\n');
@@ -317,7 +317,11 @@ $(document).ready(function () {
 
     $('#standingsModal').on('shown.bs.modal', function () {
         $('#standings-table').bootstrapTable('resetView')
-    })
+    });
+
+    $('#clip-src').on('load',function(){
+
+    });
 });
 
 // Plugin @RokoCB :: Return the visible amount of px

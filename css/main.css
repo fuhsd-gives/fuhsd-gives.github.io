@@ -1529,22 +1529,12 @@ nav a {
     display: none !important; } }
 
 .scale-in {
-  -ms-transform: scale(0.8);
-  /* IE 9 */
-  -ms-transform-origin: 50% 50%;
-  -moz-transform: scale(0.8);
-  /* Firefox */
-  -moz-transform-origin: 50% 50%;
-  -o-transform: scale(0.8);
-  /* Opera */
-  -o-transform-origin: 50% 50%;
-  -webkit-transform: scale(0.8);
-  /* Safari And Chrome */
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
   -webkit-transform-origin: 50% 50%;
-  transform: scale(0.8);
-  /* Standard Property */
+  -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  /* Standard Property */
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   -o-transition: transform 0.5s ease-in-out;
@@ -2096,6 +2086,7 @@ body.modal-open header {
     position: absolute;
     right: 1.5rem;
     top: 12.5px;
+    z-index: 8;
     font-size: 110%; }
     @media (min-width: 769px) {
       .force-scroll .refresh-indicator {

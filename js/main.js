@@ -311,9 +311,6 @@ $(document).ready(function () {
                         sequence: 0,
                         speed: 1800
                     },
-                    tooltip: {
-                        placement: "node:center"
-                    },
                     stacked: true
                 },
                 plotarea: {
@@ -339,7 +336,8 @@ $(document).ready(function () {
                     }
                 }),
                 tooltip: {
-                    text: '$%total'
+                    text: '$%total',
+                    offsetY: -2
                 },
                 series: [
                     {

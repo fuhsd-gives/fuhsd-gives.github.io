@@ -1,3 +1,7 @@
 User-Agent: *
 Allow: /$
+Allow: /js/
+Allow: /img/
+Allow: /fonts/
+Allow: /css/
 Disallow: /

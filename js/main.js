@@ -162,7 +162,7 @@ $(document).ready(function () {
         var data = e[key];
         if (("" + data).includes("donation-completed:")) {
             let body = JSON.parse(data.substring(data.indexOf(':') + 1));
-            console.info(body);
+            // console.info(body);
             if (isMobile) {
                 $('#donate > div.container > div.row.d-flex.justify-content-center > div.col-lg-6.contact-right').addClass('scale-in');
                 setTimeout(function () {
@@ -182,19 +182,47 @@ $(document).ready(function () {
     let zingQ = false;
     let zingShown = false;
     let pSpam = false;
+
+    if (checkVisible(document.getElementById('leaderboard'))) {
+        // console.info('initial check',pSpam, zingShown);
+        if (!zingShown && !pSpam) {
+            if (zingchart) {
+                // console.info('zing chart is available');
+                pSpam = true;
+                loadGraph();
+            } else if (!zingQ) {
+                // console.info('adding q to zing');
+                zingQ = true;
+                $('#zing-src').on('load', function () {
+                    // console.info('loaded');
+                    if (!pSpam) {
+                        // console.info('loaded-> load graph');
+                        pSpam = true;
+                        loadGraph();
+                    }
+                })
+            }
+        }
+    }
+
     $("#leaderboard").inViewport(function (px) {
         if (px) {
             // console.info(px);
             if (zingchart && !zingShown && !pSpam) {
                 // console.info("prevent spam pls");
                 pSpam = true;
+                // console.info('setting prevent spam');
                 loadGraph();
             } else {
+                // console.info('hi', zingQ, pSpam);
                 if (!zingQ && !pSpam) {
+                    // console.info('set q');
                     zingQ = true;
                     // console.info('setting listener');
                     $('#zing-src').on('load', function () {
+                        // console.info('loaded');
                         if (!pSpam) {
+                            // console.info('loaded-> load graph');
                             pSpam = true;
                             loadGraph();
                         }
@@ -202,111 +230,137 @@ $(document).ready(function () {
                 }
             }
         }
+    });
 
-        function loadGraph() {
-            // console.info('loading graph');
-            let respArr;
-            $.ajax({
-                url: "https://coinwar.santaclaragives.org/data",
-                // url: "http://localhost:8080/data",
-                method: "GET",
-            }).done(function (data) {
-                respArr = data.response;
-                if (!respArr) {
-                    setTimeout(function () {
-                        pSpam = false;
-                    }, 1000);
-                    return;
-                }
-                respArr.sort((a, b) => (a.total > b.total) ? 1 : -1);
-                createGraph();
-                zingShown = true;
-            }).fail(function (xhr) {
+    let count_loadGraph = 0;
+
+    function loadGraph() {
+        // console.info('loading graph');
+        let respArr;
+        $.ajax({
+            url: "https://coinwar.santaclaragives.org/data",
+            // url: "http://localhost:8080/data",
+            method: "GET",
+        }).done(function (data) {
+            respArr = data.response;
+            if (!data || (!respArr && !JSON.parse(data).response)) {
+                setTimeout(function () {
+                    if (data.status === 503) {
+                        setTimeout(function () {
+                            if (count_loadGraph++ < 5) {
+                                loadGraph();
+                            }
+                        }, 2000);
+                    }
+                    pSpam = false;
+                }, 1000);
+                return;
+            }
+            if (!respArr) {
+                respArr = JSON.parse(data).response;
+                //loaded from cache
+            }
+            respArr.sort((a, b) => (a.total > b.total) ? 1 : -1);
+            createGraph();
+            zingShown = true;
+        }).fail(function (xhr) {
+            if (xhr.status === 503) {
+                setTimeout(function () {
+
+                    if (count_loadGraph++ < 5) {
+                        loadGraph()
+                    }
+
+                }, 2000);
+            } else {
                 console.error(xhr);
                 setTimeout(function () {
                     pSpam = false;
                 }, 1000);
-            });
-
-            function createGraph() {
-                // console.info('calling create graph');
-
-                let highestAmt = respArr[respArr.length - 1].total;
-
-                let createLabel = (text, index) => {
-                    return {
-                        text: text,
-                        fontColor: '#FFFFFF',
-                        fontFamily: '"Trebuchet MS", Helvetica, sans-serif',
-                        fontSize: '14px',
-                        fontWeight: 'normal',
-                        flat: true, // no event listener
-                        hook: 'scale:name=scale-x;index=' + index + ';',
-                        offsetX: '60px',
-                        width: '110px',
-                        shadow: false,
-                        textAlign: 'left'
-                    }
-                };
-
-                let graphConfig = {
-                    type: 'hbar',
-                    theme: 'dark',
-                    plot: {
-                        animation: {
-                            delay: 500,
-                            effect: 'ANIMATION_EXPAND_BOTTOM',
-                            sequence: 0,
-                            speed: 1800
-                        },
-                        stacked: true
-                    },
-                    plotarea: {
-                        margin: 'dynamic',
-                        backgroundColor: 'transparent'
-                    },
-                    backgroundColor: 'transparent',
-
-                    scaleX: {
-                        visible: false
-                    },
-                    scaleY: {
-                        format: '$%v',
-                        guide: {
-                            visible: false
-                        }
-                    },
-                    labels: respArr.map(function (obje, oIndex) {
-                        if (+obje.total < highestAmt / 2) {
-                            return createLabel(obje.school.substring(0, obje.school.indexOf(' ')), oIndex);
-                        } else {
-                            return createLabel(obje.school, oIndex);
-                        }
-                    }),
-                    tooltip: {
-                        text: '$%total'
-                    },
-                    series: [
-                        {
-                            values: respArr.map(function (obj) {
-                                return +obj.total
-                            }),
-                            backgroundColor: '#4AC3B9 #6DAACE',
-                            borderRadius: '0 6 6 0'
-                        }
-                    ]
-                };
-                zingchart.render({
-                    id: 'leaderboard-bars',
-                    data: graphConfig,
-                    height: '100%',
-                    width: '100%'
-                });
             }
+        });
 
+        function createGraph() {
+            // console.info('calling create graph');
 
+            let highestAmt = respArr[respArr.length - 1].total;
+
+            let createLabel = (text, index) => {
+                return {
+                    text: text,
+                    fontColor: '#FFFFFF',
+                    fontFamily: '"Trebuchet MS", Helvetica, sans-serif',
+                    fontSize: '14px',
+                    fontWeight: 'normal',
+                    flat: true, // no event listener
+                    hook: 'scale:name=scale-x;index=' + index + ';',
+                    offsetX: '60px',
+                    width: '110px',
+                    shadow: false,
+                    textAlign: 'left'
+                }
+            };
+
+            let graphConfig = {
+                type: 'hbar',
+                theme: 'dark',
+                plot: {
+                    animation: {
+                        delay: 500,
+                        effect: 'ANIMATION_EXPAND_BOTTOM',
+                        sequence: 0,
+                        speed: 1800
+                    },
+                    tooltip: {
+                        placement: "node:center"
+                    },
+                    stacked: true
+                },
+                plotarea: {
+                    margin: 'dynamic',
+                    backgroundColor: 'transparent'
+                },
+                backgroundColor: 'transparent',
+
+                scaleX: {
+                    visible: false
+                },
+                scaleY: {
+                    format: '$%v',
+                    guide: {
+                        visible: false
+                    }
+                },
+                labels: respArr.map(function (obje, oIndex) {
+                    if (+obje.total < highestAmt / 2) {
+                        return createLabel(obje.school.substring(0, obje.school.indexOf(' ')), oIndex);
+                    } else {
+                        return createLabel(obje.school, oIndex);
+                    }
+                }),
+                tooltip: {
+                    text: '$%total'
+                },
+                series: [
+                    {
+                        values: respArr.map(function (obj) {
+                            return +obj.total
+                        }),
+                        backgroundColor: '#4AC3B9 #6DAACE',
+                        borderRadius: '0 6 6 0'
+                    }
+                ]
+            };
+            zingchart.render({
+                id: 'leaderboard-bars',
+                data: graphConfig,
+                height: '100%',
+                width: '100%'
+            });
         }
-    });
+
+
+    }
 
     let scrollableDiv = $('.not-mobile.force-scroll');
     $('.fade-gradient-bottom').on('mousewheel', function (e) {
@@ -319,7 +373,7 @@ $(document).ready(function () {
         $('#standings-table').bootstrapTable('resetView')
     });
 
-    $('#clip-src').on('load',function(){
+    $('#clip-src').on('load', function () {
 
     });
 });
@@ -335,21 +389,59 @@ $(document).ready(function () {
                     r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
                 return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
             }
+
             visPx();
             $(win).on("resize scroll", visPx);
         });
     };
 }($, window));
 
-function tableAjaxRequest(params){
+let count_loadTable = 0;
+
+function tableAjaxRequest(params) {
     let tableDataUrl = 'https://coinwar.santaclaragives.org/standings';
     $.ajax({
         url: tableDataUrl,
         method: "GET",
     }).done(function (data) {
-        params.success(data);
+        if (data.status === 503) {
+            setTimeout(function () {
+                if (count_loadTable++ < 5) {
+                    tableAjaxRequest(params)
+                }
+            }, 2000);
+        } else {
+            if (typeof data === 'string') {
+                data = JSON.parse(data);
+                if (data.status === 503) {
+                    setTimeout(function () {
+                        if (count_loadTable++ < 5) {
+                            tableAjaxRequest(params)
+                        }
+                    }, 2000);
+                } else {
+                    params.success(data);
+                }
+            } else {
+                params.success(data);
+            }
+        }
     }).fail(function (xhr) {
-        console.error(xhr);
-        params.success([]);
+        if (xhr.status === 503) {
+            setTimeout(function () {
+                if (count_loadTable++ < 5) {
+                    tableAjaxRequest(params)
+                }
+            }, 2000);
+        } else {
+            console.error(xhr);
+            params.success([]);
+        }
     });
+}
+
+function checkVisible(elm) {
+    var recta = elm.getBoundingClientRect();
+    var viewHeighta = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(recta.bottom < 0 || recta.top - viewHeighta >= 0);
 }

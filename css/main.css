@@ -1529,9 +1529,9 @@ nav a {
     display: none !important; } }
 
 .scale-in {
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
+  -webkit-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  transform: scale(0.75);
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
@@ -2095,6 +2095,12 @@ body.modal-open header {
 @media (max-width: 768px) {
   .force-scroll {
     height: 300px; } }
+
+#standingsModal .bootstrap-table .btn.btn-secondary i {
+  color: #fff; }
+
+#standingsModal .bootstrap-table .btn.btn-secondary:hover {
+  cursor: pointer; }
 
 .leaderboard-area {
   background-color: #222;

@@ -1517,6 +1517,10 @@ nav a {
       .section-title p br {
         display: none; } }
 
+.after-donate {
+  display: none;
+  opacity: 0; }
+
 .lnr {
   font-weight: 700; }
 
@@ -2039,6 +2043,12 @@ body.modal-open header {
   @media (max-width: 1199px) {
     .donate-area .contact-right {
       padding-left: 15px; } }
+  .donate-area .contact-right .click-to-share {
+    position: absolute;
+    top: calc(444.5px * 5 / 4 - 55px);
+    right: 59px;
+    text-decoration: underline;
+    color: #737373; }
   .donate-area .contact-right .form-control {
     border-radius: 0;
     background-color: transparent;
@@ -2171,6 +2181,7 @@ body.modal-open header {
   .footer-social a {
     padding: 15px; }
     .footer-social a i {
+      width: 21px;
       color: #ccc;
       font-size: 150%;
       -webkit-transition: all 0.3s ease 0s;

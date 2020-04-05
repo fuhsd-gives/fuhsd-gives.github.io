@@ -72,6 +72,12 @@
         <link href="css/bootstrap-table.min.css" rel="stylesheet">
     </noscript>
     <link href="css/main.css" rel="stylesheet">
+
+    <!-- BEGIN SHAREAHOLIC CODE -->
+    <link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+    <meta name="shareaholic:site_id" content="d28995618f8ddc58d5e6ca1cc63a31c2" />
+    <script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+    <!-- END SHAREAHOLIC CODE -->
 </head>
 <body>
 
@@ -173,10 +179,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table data-search="true" data-search-text=""
-                       data-toggle="table"
+                <table data-ajax="tableAjaxRequest" data-search="true"
+                       data-search-text=""
                        data-show-refresh="true"
-                       data-ajax="tableAjaxRequest"
+                       data-toggle="table"
                        data-url="https://coinwar.santaclaragives.org/standings"
                        id="standings-table">
                     <thead>
@@ -190,6 +196,28 @@
             </div>
             <div class="modal-footer flex-row justify-content-end align-items-center">
                 <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
+                        class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="shareModalLabel" class="modal fade" id="shareModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="shareModalLabel">Spread the Word!</h2>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer flex-row justify-content-end align-items-center">
+                <a class="primary-btn mt-20 text-uppercase" href="#cModal" style="margin: 0">Close<span
                         class="lnr lnr-arrow-right"></span>
                 </a>
             </div>
@@ -449,6 +477,8 @@
                 </div>
             </div>
             <div class="col-lg-6 contact-right">
+                <a class="click-to-share after-donate" data-target="#shareModal"
+                   data-toggle="modal" href="javascript:void(0)">Click to Share!</a>
                 <!--                <script paypalExpress="false" src="https://donorbox.org/widget.js"></script>-->
                 <iframe allowpaymentrequest="" frameborder="0" height="900px" id="donateForm" name="donorbox"
                         scrolling="no" seamless="seamless" src="https://donorbox.org/embed/fuhsdgives"
@@ -526,9 +556,11 @@
             <div class="footer-social">
                 <a href="https://www.instagram.com/santaclaragives/" rel="noopener" target="_blank"><i
                         class="fa fa-instagram"></i></a>
-                <a href="https://facebook.com/santaclaragives" rel="noopener" target="_blank"><i class="fa fa-facebook-f"></i></a>
+                <a href="https://facebook.com/santaclaragives" rel="noopener" target="_blank"><i
+                        class="fa fa-facebook-f"></i></a>
                 <a href="mailto:santaclaragives@gmail.com"><i class="fa fa-envelope"></i></a>
-                <a href="#0"><i class="fa fa-files-o"></i></a>
+                <a data-target="#shareModal" data-toggle="modal"
+                   href="javascript:void(0)"><i class="fa fa-share-alt"></i></a>
             </div>
             <p class="footer-text m-0" id="copyright"></p>
             <p class="footer-text mt-1 mb-0">

@@ -72,6 +72,10 @@ $(document).ready(function () {
                 } else if (this.hash) {
                     if (this.hash.includes('cModal')) {
                         event.preventDefault();
+                        if (!this.hash.split('-')) {
+                            $('.modal').modal('hide');
+                            return;
+                        }
                         target = $('#' + this.hash.split('-')[1]);
                         $('.modal').modal('hide');
                         $('html, body').animate({
@@ -175,6 +179,14 @@ $(document).ready(function () {
                     });
                     targe.attr('src', targe.attr('src'));
                 }, 1000)
+                setTimeout(function(){
+                    $('.after-donate').css({
+                        display: 'unset'
+                    });
+                    $('.after-donate').animate({
+                        opacity: 1,
+                    }, 1000);
+                }, 500);
             }
         }
     }, false);

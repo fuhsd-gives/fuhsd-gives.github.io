@@ -2085,7 +2085,10 @@ body.modal-open header {
         justify-content: space-evenly;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center; } }
+        align-items: center; }
+      .donate-area .contact-right .payment-method img {
+        width: calc(100vw - 102px - 30px) !important;
+        height: auto !important; } }
 
 .force-scroll {
   height: 420px;

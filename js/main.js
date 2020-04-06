@@ -144,10 +144,10 @@ $(document).ready(function () {
         switch (project) {
             case 'medical':
                 title = 'Medical Supplies';
-                text = 'The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.  Like in any disaster, the best way to help is by making a financial contribution.  Donations will allow the <b style="color: unset; font-weight: 600">Valley Medical Center Foundation</b> to respond to emergency needs from physicians, first responders and local public health officials.';
+                text = 'The County of Santa Clara Health System – comprising Santa Clara Valley Medical Center Hospital & Clinics, O’Connor Hospital, St Louise Regional Hospital, Santa County County Public Health Department and other affiliated agencies  – is the largest provider of essential health services to vulnerable populations in our region. Santa Clara\'s VMC Foundation is calling on the community to support our care providers with donations of funds and supplies.  Like in any disaster, the best way to help is by making a financial contribution.  Donations will allow the <b style="color: unset; font-weight: 600">Valley Medical Center Foundation</b> to respond to emergency needs from physicians, first responders and local public health officials.';
                 break;
             case 'local':
-                title = 'Community Non-Profits';
+                title = 'Local Food Bank';
                 text = 'A record number of kids, families and seniors rely on <b style="color: unset; font-weight: 600">Second Harvest</b> for food every month, and the number is growing. It’s hard to imagine the pain of not being able to feed your family, or going to school on an empty stomach. But the reality is more than 1 in 4 people is at risk of hunger in Silicon Valley. The booming economy has sent the cost of housing soaring, leaving many families and seniors with little left over for food. Even those we depend on to make our community run can’t afford to pay for housing and put nutritious food on the table — cooks, cashiers, health care workers and teachers. With school and business shut downs, the need to support vulnerable families at risk of hunger is more important than ever. Second Harvest is committed to distributing nutritious food to nearly every neighborhood in Silicon Valley and leveraging every available food resource.';
                 break;
             case 'business':
@@ -484,10 +484,10 @@ function tableAjaxRequest(params) {
     });
 
     $('#shareMessage').val(
-        'Hi all, it can be so easy to feel helpless during this COVID-19 pandemic, but as a community, we can make a meaningful impact. Santa Clara Gives is partnering with Bay Echo, a 501 (3) nonprofit, to support our local businesses and organizations financially. Your tax-deductible donation could mean the world to the homeless and healthcare workers.\n' +
+        'Hi all, it can be so easy to feel helpless amid this pandemic, but we can make a meaningful impact as a community. Santa Clara Gives is partnering with Bay Echo, a 501(c)(3) nonprofit, to support our local businesses and nonprofits that need financial help due to COVID-19. Your tax-deductible donation will directly benefit low-income families, the Santa Clara Health System, and small businesses.\n' +
         '--\n' +
         'Together, we will weather this storm.\n' +
-        'https://santaclaragives.org'
+        'https://santaclaragives.org\n'
     )
 }
 

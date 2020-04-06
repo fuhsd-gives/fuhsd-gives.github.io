@@ -1633,20 +1633,37 @@ nav a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 5% 8% 2% 8%; }
+    padding: 3% 18%; }
+    @media (max-width: 767px) {
+      #shareModal .modal-body {
+        padding: 1% 2%; } }
+    #shareModal .modal-body .social-buttons-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      margin-top: -0.5em;
+      margin-left: -0.5em; }
     #shareModal .modal-body img {
-      padding-bottom: 5%; }
+      padding-bottom: 3%; }
     #shareModal .modal-body textarea {
       resize: none;
+      margin-bottom: 1%;
       border: 1px solid #AAAAAA; }
   #shareModal .resp-sharing-button__icon {
     display: -webkit-box;
@@ -1713,6 +1730,10 @@ nav a {
     background-color: #333333; }
     #shareModal .resp-sharing-button--clipboard:hover {
       background-color: #111111; }
+  #shareModal .resp-sharing-button--wechat {
+    background-color: #2DC100; }
+    #shareModal .resp-sharing-button--wechat:hover {
+      background-color: #239800; }
   #shareModal .resp-sharing-button--pinterest {
     background-color: #bd081c; }
   #shareModal .resp-sharing-button--pinterest:hover {

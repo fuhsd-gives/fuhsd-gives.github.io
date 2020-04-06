@@ -102,6 +102,16 @@ $(document).ready(function () {
                         target.attr('src', target.attr('src'));
                     } else if (this.hash.includes('ignore')) {
                         event.preventDefault();
+                    } else if(this.hash.includes('share')){
+                        event.preventDefault();
+                        let target = this.hash.split('-')[1];
+                        if(target == 'wechat'){
+                            if(isMobile){
+
+                            }else{
+
+                            }
+                        }
                     }
                 }
             }

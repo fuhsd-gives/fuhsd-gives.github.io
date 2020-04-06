@@ -216,6 +216,10 @@ $(document).ready(function () {
                         }, 1000);
                     }
                 }, 500);
+            }else{
+                setTimeout(function(){
+                    $('#shareModal').modal('show');
+                },1000);
             }
         }
     }, false);
@@ -479,6 +483,12 @@ function tableAjaxRequest(params) {
         }
     });
 
+    $('#shareMessage').val(
+        'Hi all, it can be so easy to feel helpless during this COVID-19 pandemic, but as a community, we can make a meaningful impact. Santa Clara Gives is partnering with Bay Echo, a 501 (3) nonprofit, to support our local businesses and organizations financially. Your tax-deductible donation could mean the world to the homeless and healthcare workers.\n' +
+        '--\n' +
+        'Together, we will weather this storm.\n' +
+        'https://santaclaragives.org'
+    )
 }
 
 function checkVisible(elm) {

@@ -1625,6 +1625,11 @@ nav a {
 
 #aboutModal .modal-body {
   font-size: 115%; }
+  #aboutModal .modal-body img {
+    max-width: 100% !important; }
+    @media (min-width: 768px) {
+      #aboutModal .modal-body img {
+        max-width: 20% !important; } }
 
 #shareModal {
   /* Non solid icons get a stroke */

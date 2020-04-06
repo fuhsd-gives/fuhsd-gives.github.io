@@ -231,7 +231,7 @@ $(document).ready(function () {
     if (checkVisible(document.getElementById('leaderboard'))) {
         // console.info('initial check',pSpam, zingShown);
         if (!zingShown && !pSpam) {
-            if (zingchart) {
+            if (typeof zingchart !== 'undefined' && zingchart !== null) {
                 // console.info('zing chart is available');
                 pSpam = true;
                 loadGraph();

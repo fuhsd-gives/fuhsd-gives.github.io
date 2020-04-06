@@ -72,7 +72,7 @@ $(document).ready(function () {
                 } else if (this.hash) {
                     if (this.hash.includes('cModal')) {
                         event.preventDefault();
-                        if (!this.hash.split('-')) {
+                        if (!this.hash.split('-')[1]) {
                             $('.modal').modal('hide');
                             return;
                         }
@@ -106,6 +106,24 @@ $(document).ready(function () {
                 }
             }
         });
+
+    $('#shareModal').on('show.bs.modal', function (event) {
+        setTimeout(function () {
+            let $taEl = $('#shareMessage');
+            $taEl.height(1);
+            $taEl.animate({
+                height: (2 + $taEl.get(0).scrollHeight)
+            }, 1000);
+        }, 510);
+    });
+
+    $('[aria-label^="Share"]').on('click', function (event) {
+        let urlSafe = encodeURIComponent($('#shareMessage').val());
+        console.info(urlSafe);
+        $(this).attr('href', $(this).attr('href').replace('[REPLACE_THIS]', urlSafe));
+        return true;
+    });
+
 
     $('#projectModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
@@ -385,8 +403,9 @@ $(document).ready(function () {
         $('#standings-table').bootstrapTable('resetView')
     });
 
-    $('#clip-src').on('load', function () {
 
+    let clipboard = new ClipboardJS('.btn-clipboard', {
+        container: document.getElementById('shareModal')
     });
 });
 
@@ -450,10 +469,17 @@ function tableAjaxRequest(params) {
             params.success([]);
         }
     });
+
 }
 
 function checkVisible(elm) {
     var recta = elm.getBoundingClientRect();
     var viewHeighta = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(recta.bottom < 0 || recta.top - viewHeighta >= 0);
+}
+
+
+function textAreaAdjust(o) {
+    o.style.height = "1px";
+    o.style.height = (2 + o.scrollHeight) + "px";
 }

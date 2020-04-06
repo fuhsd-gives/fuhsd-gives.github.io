@@ -1643,6 +1643,8 @@ nav a {
     -ms-flex-pack: center;
     justify-content: center;
     padding: 5% 8% 2% 8%; }
+    #shareModal .modal-body img {
+      padding-bottom: 5%; }
     #shareModal .modal-body textarea {
       resize: none;
       border: 1px solid #AAAAAA; }

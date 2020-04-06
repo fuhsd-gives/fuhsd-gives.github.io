@@ -119,7 +119,6 @@ $(document).ready(function () {
 
     $('[aria-label^="Share"]').on('click', function (event) {
         let urlSafe = encodeURIComponent($('#shareMessage').val());
-        console.info(urlSafe);
         $(this).attr('href', $(this).attr('href').replace('[REPLACE_THIS]', urlSafe));
         return true;
     });

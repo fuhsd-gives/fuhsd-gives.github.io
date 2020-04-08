@@ -15,6 +15,16 @@
         gtag('config', 'UA-142125117-3');
     </script>
 
+    <!-- Google analytics outbound tracker -->
+    <script>
+        var getOutboundLink = function (url) {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': url,
+                'transport_type': 'beacon'
+            });
+        }
+    </script>
 
     <link crossorigin href="https://www.google-analytics.com" rel="preconnect">
     <link crossorigin href="https://fonts.googleapis.com" rel="preconnect">
@@ -167,7 +177,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                    We, Santa Clara Gives, are residents all across the county. We realized that it can be so easy to feel
+                We, Santa Clara Gives, are residents all across the county. We realized that it can be so easy to feel
                 alone and helpless in this unique time, but as a community, we can make a meaningful impact.
                 <br>
                 <picture>
@@ -190,7 +200,7 @@
                 <br>
                 <br>
                 If you have any questions for us, feel free to email us at <a
-                        href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a>.
+                    href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a>.
             </div>
             <div class="modal-footer flex-row justify-content-end align-items-center">
                 <a class="primary-btn mt-20 text-uppercase" href="#cModal-donate" style="margin: 0">Donate Now<span
@@ -269,6 +279,7 @@
                     <a aria-label="Share on Facebook"
                        class="resp-sharing-button__link"
                        href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsantaclaragives.org"
+                       onclick="getOutboundLink('https://facebook.com'); return true;"
                        rel="noopener" target="_blank">
                         <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large">
                             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -280,22 +291,23 @@
                         </div>
                     </a>
 
-<!--                    <a aria-label="Share on WeChat"-->
-<!--                       class="resp-sharing-button__link"-->
-<!--                       href="https://wechat.com"-->
-<!--                       rel="noopener" target="_blank">-->
-<!--                        <div class="resp-sharing-button resp-sharing-button&#45;&#45;wechat resp-sharing-button&#45;&#45;large">-->
-<!--                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon&#45;&#45;solid">-->
-<!--                                <img alt="wechat logo image" src="img/svg/wechat.svg" style="width: 14px" width="14px">-->
-<!--                            </div>-->
-<!--                            <div>Share on WeChat</div>-->
-<!--                        </div>-->
-<!--                    </a>-->
+                    <!--                    <a aria-label="Share on WeChat"-->
+                    <!--                       class="resp-sharing-button__link"-->
+                    <!--                       href="https://wechat.com"-->
+                    <!--                       rel="noopener" target="_blank">-->
+                    <!--                        <div class="resp-sharing-button resp-sharing-button&#45;&#45;wechat resp-sharing-button&#45;&#45;large">-->
+                    <!--                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon&#45;&#45;solid">-->
+                    <!--                                <img alt="wechat logo image" src="img/svg/wechat.svg" style="width: 14px" width="14px">-->
+                    <!--                            </div>-->
+                    <!--                            <div>Share on WeChat</div>-->
+                    <!--                        </div>-->
+                    <!--                    </a>-->
 
                     <!-- Sharingbutton Twitter -->
                     <a aria-label="Share on Twitter"
                        class="resp-sharing-button__link"
                        href="https://twitter.com/intent/tweet/?text=[REPLACE_THIS]&amp;url=http%3A%2F%2Fsantaclaragives.org"
+                       onclick="getOutboundLink('https://twitter.com'); "
                        rel="noopener" target="_blank">
                         <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large">
                             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -342,6 +354,7 @@
                     <a aria-label="Share on Reddit"
                        class="resp-sharing-button__link"
                        href="https://reddit.com/submit/?url=http%3A%2F%2Fsantaclaragives.org&amp;resubmit=true&amp;title=[REPLACE_THIS]"
+                       onclick="getOutboundLink('https://reddit.com'); "
                        rel="noopener" target="_blank">
                         <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--large">
                             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -357,6 +370,7 @@
                     <a aria-label="Share on WhatsApp"
                        class="resp-sharing-button__link"
                        href="https://wa.me/?text=[REPLACE_THIS]"
+                       onclick="getOutboundLink('https://wa.me'); "
                        rel="noopener" target="_blank">
                         <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--large">
                             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -608,6 +622,7 @@
                     <p>
                         All donations to charities will be documented and public at all times. Search <a
                             href="https://docs.google.com/spreadsheets/d/1Bt_hDzc8I8-cb9vHVIOFvsd3n_a1PDqa7gdn0-xzVN4/edit?usp=sharing"
+                            onclick="getOutboundLink('https://sheets.google.com'); "
                             rel="noopener" target="_blank">this</a> spreadsheet to see the impact of your funding.
 
                         <!--                        Email us at-->
@@ -716,9 +731,15 @@
                 <li><a href="#donate">Donate</a></li>
             </ul>
             <div class="footer-social">
-                <a href="https://www.instagram.com/santaclaragives/" rel="noopener" target="_blank"><i
+                <a href="https://www.instagram.com/santaclaragives/"
+
+                   onclick="getOutboundLink('https://instagram.com'); "
+                   rel="noopener" target="_blank"><i
                         class="fa fa-instagram"></i></a>
-                <a href="https://facebook.com/santaclaragives" rel="noopener" target="_blank"><i
+                <a href="https://facebook.com/santaclaragives"
+
+                   onclick="getOutboundLink('https://facebook.com'); "
+                   rel="noopener" target="_blank"><i
                         class="fa fa-facebook-f"></i></a>
                 <a href="mailto:santaclaragives@gmail.com"><i class="fa fa-envelope"></i></a>
                 <a data-target="#shareModal" data-toggle="modal"
@@ -727,12 +748,16 @@
             <p class="footer-text m-0" id="copyright"></p>
             <p class="footer-text mt-1 mb-0">
                 This organization is a partner of <a
-                    href="http://www.bayecho.org/" rel="noopener" target="_blank">BayEcho</a>, a 501(c)(3) nonprofit
+                    href="http://www.bayecho.org/" onclick="getOutboundLink('https://bayecho.org'); "
+                    rel="noopener"
+                    target="_blank">BayEcho</a>, a 501(c)(3) nonprofit
                 handling our finances
             </p>
             <p class="footer-text mt-1 mb-0">
                 We are supported by <a
-                    href="https://www.apapa.org/" rel="noopener" target="_blank">APAPA</a>, a non-profit and grassroots
+                    href="https://www.apapa.org/"
+                    onclick="getOutboundLink('https://apapa.org');"
+                    rel="noopener" target="_blank">APAPA</a>, a non-profit and grassroots
                 organization
             </p>
         </div>

@@ -102,13 +102,13 @@ $(document).ready(function () {
                         target.attr('src', target.attr('src'));
                     } else if (this.hash.includes('ignore')) {
                         event.preventDefault();
-                    } else if(this.hash.includes('share')){
+                    } else if (this.hash.includes('share')) {
                         event.preventDefault();
                         let target = this.hash.split('-')[1];
-                        if(target == 'wechat'){
-                            if(isMobile){
+                        if (target == 'wechat') {
+                            if (isMobile) {
 
-                            }else{
+                            } else {
 
                             }
                         }
@@ -116,6 +116,13 @@ $(document).ready(function () {
                 }
             }
         });
+
+    var pathname = window.location.pathname;
+    if (pathname === '#share') {
+        setTimeout(function () {
+            $('#shareModal').modal();
+        }, 500);
+    }
 
     $('#shareModal').on('show.bs.modal', function (event) {
         setTimeout(function () {
@@ -216,10 +223,10 @@ $(document).ready(function () {
                         }, 1000);
                     }
                 }, 500);
-            }else{
-                setTimeout(function(){
+            } else {
+                setTimeout(function () {
                     $('#shareModal').modal('show');
-                },1000);
+                }, 1000);
             }
         }
     }, false);

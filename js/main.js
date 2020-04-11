@@ -491,7 +491,7 @@ function tableAjaxRequest(params) {
     });
 
     $('#shareMessage').val(
-        'Hi all, it can be so easy to feel helpless amid this pandemic, but we can make a meaningful impact as a community. Santa Clara Gives is partnering with Bay Echo, a 501(c)(3) nonprofit, to support our local businesses and nonprofits that need financial help due to COVID-19. Your tax-deductible donation will directly benefit low-income families, the Santa Clara Health System, and small businesses.\n' +
+        'Hi all, it can be so easy to feel helpless amid this pandemic, but we can make a meaningful impact as a community. Santa Clara Gives is partnering with Bay Echo, a 501(c)(3) nonprofit, to support our local businesses and nonprofits that need financial help due to COVID-19. Your tax-deductible donation will go to Second Harvest Food Bank, Valley Medical Center Foundation, and Opportunity Fund\'s Small Business Relief Fund.\n' +
         '--\n' +
         'Together, we will weather this storm.\n' +
         'https://santaclaragives.org\n'

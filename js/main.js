@@ -117,8 +117,8 @@ $(document).ready(function () {
             }
         });
 
-    var pathname = window.location.pathname;
-    if (pathname === '#share') {
+    var url = window.location.href;
+    if (url.includes('#share')) {
         setTimeout(function () {
             $('#shareModal').modal();
         }, 500);

@@ -89,7 +89,8 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
     </noscript>
 
-    <link as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"
+          onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
     </noscript>
@@ -425,7 +426,9 @@
                     Makes a Difference.
                 </h1>
                 <div class="line-separator"></div>
-                <div class="stat-container">
+                <a class="stat-container" data-placement="top" data-toggle="tooltip" href="quarters/2020/q1"
+                   onclick="getOutboundLink('quarters/2020/q1');" target="_blank"
+                   title="Take a look at our quarter one report">
                     <div>
                         <span class="past-stat" data-count-up="5622"></span>
                         <span class="stat-desc">Masks Donated</span>
@@ -438,8 +441,12 @@
                         <span class="past-stat" data-count-up="52"></span>
                         <span class="stat-desc">Donors</span>
                     </div>
-                </div>
-<!--                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>-->
+                </a>
+                <a data-placement="top" data-toggle="tooltip" href="quarters/2020/q1"
+                   onclick="getOutboundLink('quarters/2020/q1');" target="_blank"
+                   title="Take a look at our quarter one report">Q1
+                   Report</a>
+                <!--                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>-->
             </div>
         </div>
     </div>
@@ -646,10 +653,10 @@
                 <div class="single-info">
                     <h4>Complete Transparency</h4>
                     <p>
-                        All donations to charities will be documented and public at all times. Search <a
-                            href="https://docs.google.com/spreadsheets/d/1Bt_hDzc8I8-cb9vHVIOFvsd3n_a1PDqa7gdn0-xzVN4/edit?usp=sharing"
-                            onclick="getOutboundLink('https://sheets.google.com'); "
-                            rel="noopener" target="_blank">this</a> spreadsheet to see the impact of your funding.
+                        All donations to charities will be documented and public at all times. Read our quarterly <a
+                            href="/quarters/current"
+                            onclick="getOutboundLink('https://santaclaragives.org/quarters/current'); "
+                            rel="noopener" target="_blank">reports</a> to see the impact of your funding.
 
                         <!--                        Email us at-->
                         <!--                        <a href="mailto:santaclaragives@gmail.com">santaclaragives@gmail.com</a> if you’d like to suggest a-->

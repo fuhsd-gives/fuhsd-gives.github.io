@@ -432,7 +432,8 @@ $(document).ready(function () {
         } else {
             console.info(countup.error)
         }
-    })
+    });
+
 });
 
 let count_loadTable = 0;

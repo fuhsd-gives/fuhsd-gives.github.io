@@ -88,6 +88,12 @@
     <noscript>
         <link href="css/font-awesome.min.css" rel="stylesheet">
     </noscript>
+
+    <link as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/nice-select.css" rel="stylesheet">
     <link as="style" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -418,7 +424,22 @@
                     Your Donation <br>
                     Makes a Difference.
                 </h1>
-                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>
+                <div class="line-separator"></div>
+                <div class="stat-container">
+                    <div>
+                        <span class="past-stat" data-count-up="5622"></span>
+                        <span class="stat-desc">Masks Donated</span>
+                    </div>
+                    <div>
+                        <span class="past-stat" data-count-up="6050"></span>
+                        <span class="stat-desc">Dollars Received</span>
+                    </div>
+                    <div>
+                        <span class="past-stat" data-count-up="52"></span>
+                        <span class="stat-desc">Donors</span>
+                    </div>
+                </div>
+<!--                <a class="head-btn btn text-uppercase" href="#donate">Donate Now</a>-->
             </div>
         </div>
     </div>
@@ -535,7 +556,8 @@
                                         srcset="https://pixboost.com/api/2/img/https://santaclaragives.org/img/ppe%20donation%20nc.jpg/resize?size=352&auth=MTcwNDcxNzM2NQ__">
                                 <source media="(min-width: 987px)"
                                         srcset="https://pixboost.com/api/2/img/https://santaclaragives.org/img/ppe%20donation%20nc.jpg/resize?size=292&auth=MTcwNDcxNzM2NQ__">
-                                <img alt="Donating n95 masks and hygiene supplies" class="content-image img-fluid d-block mx-auto"
+                                <img alt="Donating n95 masks and hygiene supplies"
+                                     class="content-image img-fluid d-block mx-auto"
                                      loading="lazy"
                                      src="img/ppe%20donation%20nc.jpg">
                             </picture>
@@ -724,6 +746,39 @@
 </section>
 <!-- End leaderboard Area-->
 
+<!-- Start Past Area-->
+<!--<section class="past-area relative section-gap">-->
+<!--    <div class="target-div" id="progress" style="position: absolute; top: -20px"></div>-->
+<!--    <div class="container">-->
+<!--        <div class="row d-flex justify-content-end align-items-center">-->
+<!--            <div class="col-lg-6 col-md-12 past-left">-->
+<!--                <div>-->
+<!--                    <span class="past-stat" data-count-up="5622"></span>-->
+<!--                    <div class="stat-desc">Masks Donated</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <span class="past-stat" data-count-up="6050"></span>-->
+<!--                    <div class="stat-desc">Dollars Received</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <span class="past-stat" data-count-up="52"></span>-->
+<!--                    <div class="stat-desc">Donors So Far</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 col-md-12 past-right">-->
+<!--                <h1>A Quick Look At<br>Our Past</h1>-->
+<!--                <p>-->
+<!--                    We’re residents of Santa Clara County. Every single one of our lives have been drastically changed-->
+<!--                    by the novel coronavirus. But, we can fight this pandemic together. <span style="color:#5f9ea0">Santa Clara Gives</span>-->
+<!--                    strives to support organizations and businesses in need of financial assistance due to the COVID-19-->
+<!--                    pandemic as a community.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- End Past Area-->
+
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
     <div class="container">
@@ -781,9 +836,12 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
-<script async id="zing-src" src="js/vendor/zingchart.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/vendor/zingchart.min.js"></script>
 <script id="clip-src" src="js/vendor/clipboard.min.js"></script>
 <script src="js/vendor/bootstrap-table.min.js"></script>
+<script src="js/countUp.min.js"></script>
+<!--<script src="js/vendor/vendor-package.js"></script>-->
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+{
+  "name": "fuhsd-gives",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "uglify-js": "^3.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node js-package-min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuhsd-gives/fuhsd-gives.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuhsd-gives/fuhsd-gives.github.io/issues"
+  },
+  "homepage": "https://github.com/fuhsd-gives/fuhsd-gives.github.io#readme"
+}

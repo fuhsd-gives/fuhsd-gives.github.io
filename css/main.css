@@ -1891,6 +1891,51 @@ body.modal-open header {
       .banner-area .container .row {
         max-height: 50vh; } }
 
+.banner-content .line-separator {
+  position: relative;
+  min-height: 40px; }
+  .banner-content .line-separator:before {
+    width: 8%;
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 2px;
+    border-top: #fff 2px solid; }
+
+.banner-content .stat-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  .banner-content .stat-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .banner-content .stat-container div span {
+      color: #fff;
+      text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em; }
+    .banner-content .stat-container div .past-stat {
+      font-weight: 700;
+      line-height: 0.5em;
+      padding-bottom: 0.25em;
+      font-size: 36px; }
+    .banner-content .stat-container div .stat-desc {
+      font-size: 18px;
+      padding-right: 18px; }
+
 .banner-content h1 {
   text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;
   color: #fff;
@@ -2344,7 +2389,7 @@ body.modal-open header {
       margin-bottom: 25px; }
 
 .footer-area {
-  background-color: #fff;
+  background-color: #f9f9ff;
   color: #222;
   text-align: center;
   padding-top: 20px; }

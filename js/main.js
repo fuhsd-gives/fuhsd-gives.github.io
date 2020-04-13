@@ -235,52 +235,49 @@ $(document).ready(function () {
     let zingShown = false;
     let pSpam = false;
 
-    if (checkVisible(document.getElementById('leaderboard'))) {
-        // console.info('initial check',pSpam, zingShown);
-        if (!zingShown && !pSpam) {
-            if (typeof zingchart !== 'undefined' && zingchart !== null) {
-                // console.info('zing chart is available');
-                pSpam = true;
-                loadGraph();
-            } else if (!zingQ) {
-                // console.info('adding q to zing');
-                zingQ = true;
-                $('#zing-src').on('load', function () {
-                    // console.info('loaded');
-                    if (!pSpam) {
-                        // console.info('loaded-> load graph');
-                        pSpam = true;
-                        loadGraph();
-                    }
-                })
-            }
-        }
-    }
+    // let odoWaypoint = new Waypoint({
+    //     element: $('#progress').get()[0],
+    //     handler: function () {
+    //         var cUpOptions = {
+    //             useEasing: true,
+    //             useGrouping: true,
+    //             separator: ',',
+    //             decimal: '.',
+    //         };
+    //         let cUpArr = $('[data-count-up].past-stat').each(function(){
+    //             let countUp = new CountUp(this, 0, $(this).data('count-up'), 0, 2.3, cUpOptions);
+    //             countUp.start();
+    //         });
+    //         this.destroy();
+    //     },
+    //     offset: 550
+    // });
 
-    $("#leaderboard").inViewport(function (px) {
-        if (px) {
-            // console.info(px);
-            if (zingchart && !zingShown && !pSpam) {
+    var cUpOptions = {
+        useEasing: true,
+        useGrouping: true,
+        separator: ',',
+        decimal: '.',
+    };
+    let cUpArr = $('[data-count-up].past-stat').each(function () {
+        let countUp = new CountUp(this, 0, $(this).data('count-up'), 0, 3, cUpOptions);
+        countUp.start();
+    });
+
+
+    let leaderboardWaypoint = new Waypoint({
+        element: $('#leaderboard').get()[0],
+        handler: function () {
+            if (!pSpam) {
                 // console.info("prevent spam pls");
                 pSpam = true;
                 // console.info('setting prevent spam');
                 loadGraph();
-            } else {
-                // console.info('hi', zingQ, pSpam);
-                if (!zingQ && !pSpam) {
-                    // console.info('set q');
-                    zingQ = true;
-                    // console.info('setting listener');
-                    $('#zing-src').on('load', function () {
-                        // console.info('loaded');
-                        if (!pSpam) {
-                            // console.info('loaded-> load graph');
-                            pSpam = true;
-                            loadGraph();
-                        }
-                    })
-                }
+                this.destroy();
             }
+        },
+        offset: function () {
+            return 600
         }
     });
 
@@ -427,25 +424,16 @@ $(document).ready(function () {
     let clipboard = new ClipboardJS('.btn-clipboard', {
         container: document.getElementById('shareModal')
     });
+
+    $('[data-up-number]').each(function () {
+        let countup = new CountUp(this.get()[0], this.get()[0].data('up-number'))
+        if (!countup.error) {
+            countup.start();
+        } else {
+            console.info(countup.error)
+        }
+    })
 });
-
-// Plugin @RokoCB :: Return the visible amount of px
-// of any element currently in viewport.
-// stackoverflow.com/questions/24768795/
-;(function ($, win) {
-    $.fn.inViewport = function (cb) {
-        return this.each(function (i, el) {
-            function visPx() {
-                var H = $(this).height(),
-                    r = el.getBoundingClientRect(), t = r.top, b = r.bottom;
-                return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
-            }
-
-            visPx();
-            $(win).on("resize scroll", visPx);
-        });
-    };
-}($, window));
 
 let count_loadTable = 0;
 

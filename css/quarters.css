@@ -1519,11 +1519,11 @@ body {
       .section-title p br {
         display: none; } }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .not-mobile {
     display: none !important; } }
 
-@media (min-width: 769px) {
+@media (min-width: 577px) {
   .only-mobile {
     display: none !important; } }
 

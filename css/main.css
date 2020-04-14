@@ -1846,6 +1846,49 @@ body.modal-open header {
   .modal .links p {
     margin: 0; }
 
+.shadow {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
+
+.side-venmo {
+  position: fixed;
+  right: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  bottom: 10%;
+  max-width: 10%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  -webkit-transition: height ease-in-out 1s;
+  -o-transition: height ease-in-out 1s;
+  transition: height ease-in-out 1s;
+  padding: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  max-height: 35vh;
+  color: black; }
+  @media (max-width: 576px) {
+    .side-venmo {
+      bottom: 0;
+      max-width: 100vw;
+      width: 100vw;
+      right: unset; } }
+  @media (min-width: 577px) {
+    .side-venmo {
+      border-radius: 5px; } }
+  .side-venmo .x-out {
+    position: absolute;
+    top: 10px;
+    right: 15px; }
+    .side-venmo .x-out i {
+      font-size: 125%;
+      color: black; }
+
 .default-header {
   background-color: #fff;
   padding: 20px 0;

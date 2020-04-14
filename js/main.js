@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
     //------- Active Nice Select --------//
-    $('select').niceSelect();
+    // $('select').niceSelect();
 
 
     // -------   Active Mobile Menu-----//
@@ -235,24 +235,6 @@ $(document).ready(function () {
     let zingShown = false;
     let pSpam = false;
 
-    // let odoWaypoint = new Waypoint({
-    //     element: $('#progress').get()[0],
-    //     handler: function () {
-    //         var cUpOptions = {
-    //             useEasing: true,
-    //             useGrouping: true,
-    //             separator: ',',
-    //             decimal: '.',
-    //         };
-    //         let cUpArr = $('[data-count-up].past-stat').each(function(){
-    //             let countUp = new CountUp(this, 0, $(this).data('count-up'), 0, 2.3, cUpOptions);
-    //             countUp.start();
-    //         });
-    //         this.destroy();
-    //     },
-    //     offset: 550
-    // });
-
     var cUpOptions = {
         useEasing: true,
         useGrouping: true,
@@ -424,16 +406,6 @@ $(document).ready(function () {
     let clipboard = new ClipboardJS('.btn-clipboard', {
         container: document.getElementById('shareModal')
     });
-
-    $('[data-up-number]').each(function () {
-        let countup = new CountUp(this.get()[0], this.get()[0].data('up-number'))
-        if (!countup.error) {
-            countup.start();
-        } else {
-            console.info(countup.error)
-        }
-    });
-
 });
 
 let count_loadTable = 0;

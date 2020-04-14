@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
     //------- Active Nice Select --------//
-    $('select').niceSelect();
+    // $('select').niceSelect();
 
 
     // -------   Active Mobile Menu-----//

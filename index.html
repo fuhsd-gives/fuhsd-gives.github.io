@@ -95,14 +95,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
     </noscript>
 
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/nice-select.css" rel="stylesheet">
-    <link as="style" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-          onload="this.onload=null;this.rel='stylesheet'"
-          rel="preload">
-    <noscript>
-        <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
-    </noscript>
+
+<!--    <link href="css/magnific-popup.css" rel="stylesheet">-->
+<!--    <link href="css/nice-select.css" rel="stylesheet">-->
+<!--    <link as="style" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"-->
+<!--          onload="this.onload=null;this.rel='stylesheet'"-->
+<!--          rel="preload">-->
+<!--    <noscript>-->
+<!--        <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">-->
+<!--    </noscript>-->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link as="style" href="css/bootstrap-table.min.css"
           onload="this.onload=null;this.rel='stylesheet'"
@@ -115,6 +116,14 @@
 <body>
 
 <div id="tmpSticky" style="height: 70px"></div>
+
+<div class="side-venmo shadow" style="display: none; height: 0">
+    <div class="x-out"><i class="fa fa-times-circle"></i></div>
+    Want to use Venmo or Apple Pay?
+    <div>
+        Click here to go to our alternate site.
+    </div>
+</div>
 
 <!-- Start Header Area -->
 <header class="default-header">
@@ -478,7 +487,7 @@
                 </p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="projectsContainer">
 
             <div class="col-lg-4 col-md-4 project-wrap">
                 <div class="single-project">
@@ -836,12 +845,12 @@
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
+<!--<script src="js/jquery.ajaxchimp.min.js"></script>-->
+<!--<script src="js/jquery.nice-select.min.js"></script>-->
 <script src="js/jquery.sticky.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
+<!--<script src="js/parallax.min.js"></script>-->
+<script src="js/vendor/jquery-ui.js"></script>
+<!--<script src="js/jquery.magnific-popup.min.js"></script>-->
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/vendor/zingchart.min.js"></script>

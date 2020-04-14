@@ -130,7 +130,7 @@ $(document).ready(function () {
         $pContainer.data('ride', 'carousel').data('interval', 8000).addClass('slide').addClass('carousel');
         $('#projectsContainer > div > div > div > a > div').addClass('not-mobile');
         $('#projectsContainer > div > div > div >  div').addClass('not-mobile');
-        $('#projectsContainer > div > div > div > a ').off('click');
+        $('#projectsContainer > div > div > div > a ').not('[href="#projectsContainer"]').off('click');
         $('#projectsContainer > div > div > div > a ').on('click', function (event) {
             event.preventDefault();
             return false;
@@ -163,6 +163,33 @@ $(document).ready(function () {
             });
         });
     }
+
+    let venmoWP = new Waypoint({
+        element: $('#donateForm').get()[0],
+        handler: function () {
+            $('.side-venmo').css('display', 'block').animate({
+                opacity: 1
+            }, 1000);
+            $('.x-out').on('click', function(){
+                $('.side-venmo').animate({
+                    opacity: 0
+                }, 500, function(){
+                    this.css('display', 'none')
+                });
+            });
+            setTimeout(function(){
+                $('.side-venmo').animate({
+                    opacity: 0
+                }, 1000, function(){
+                    $('.side-venmo').css('display', 'none')
+                });
+            }, 15000);
+            this.destroy();
+        },
+        offset: function () {
+            return 800 + isMobile?600:0
+        }
+    });
 
     $('#shareModal').on('show.bs.modal', function (event) {
         setTimeout(function () {

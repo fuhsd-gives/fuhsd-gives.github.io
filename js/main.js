@@ -40,6 +40,7 @@ $(document).ready(function () {
         // Remove links that don't actually link to anything
         .not('[href="#"]')
         .not('[href="#0"]')
+        .not('[href="#projectsContainer"]')
         .click(function (event) {
             // On-page links
             if (
@@ -122,6 +123,45 @@ $(document).ready(function () {
         setTimeout(function () {
             $('#shareModal').modal();
         }, 500);
+    }
+
+    if (isMobile) {
+        let $pContainer = $('#projectsContainer');
+        $pContainer.data('ride', 'carousel').data('interval', 20000).addClass('slide').addClass('carousel');
+        $('#projectsContainer > div > div > div > a > div').addClass('not-mobile');
+        $('#projectsContainer > div > div > div >  div').addClass('not-mobile');
+        $('#projectsContainer > div > div > div > a ').off('click');
+        $('#projectsContainer > div > div > div > a ').on('click', function (event) {
+            event.preventDefault();
+            return false;
+        });
+        $('#projectsContainer > .project-wrap').addClass('carousel-item').wrapAll("<div class='carousel-inner' />").first().addClass('active')
+
+        let projectsCarouselWP = new Waypoint({
+            element: $pContainer.get()[0],
+            handler: function () {
+                $pContainer.carousel();
+                this.destroy();
+            },
+            offset: function () {
+                return 600
+            }
+        });
+
+        $pContainer.on("touchstart", function (event) {
+            var xClick = event.originalEvent.touches[0].pageX;
+            $(this).one("touchmove", function (event) {
+                var xMove = event.originalEvent.touches[0].pageX;
+                if (Math.floor(xClick - xMove) > 5) {
+                    $(this).carousel('next');
+                } else if (Math.floor(xClick - xMove) < -5) {
+                    $(this).carousel('prev');
+                }
+            });
+            $pContainer.on("touchend", function () {
+                $(this).off("touchmove");
+            });
+        });
     }
 
     $('#shareModal').on('show.bs.modal', function (event) {

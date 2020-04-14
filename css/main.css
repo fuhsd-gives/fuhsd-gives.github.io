@@ -2087,6 +2087,25 @@ body.modal-open header {
     text-align: center; }
     .project-area .header-text h1 {
       margin-bottom: 25px; }
+  .project-area .carousel-control-next-icon,
+  .project-area .carousel-control-prev-icon {
+    -webkit-filter: invert(1);
+    filter: invert(1); }
+  .project-area .carousel-indicators li {
+    background-color: #888; }
+    .project-area .carousel-indicators li.active {
+      background-color: #000000; }
+
+@media (max-width: 576px) {
+  .project-wrap .details .carousel-control-next,
+  .project-wrap .details .carousel-control-prev {
+    width: 10%;
+    opacity: 0.75;
+    top: -1.25px; }
+  .project-wrap .details .carousel-control-next {
+    right: -3px; }
+  .project-wrap .details div {
+    position: relative; } }
 
 .project-wrap .details h2 {
   font-size: 20px;

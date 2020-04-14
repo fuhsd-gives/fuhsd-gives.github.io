@@ -127,7 +127,7 @@ $(document).ready(function () {
 
     if (isMobile) {
         let $pContainer = $('#projectsContainer');
-        $pContainer.data('ride', 'carousel').data('interval', 20000).addClass('slide').addClass('carousel');
+        $pContainer.data('ride', 'carousel').data('interval', 8000).addClass('slide').addClass('carousel');
         $('#projectsContainer > div > div > div > a > div').addClass('not-mobile');
         $('#projectsContainer > div > div > div >  div').addClass('not-mobile');
         $('#projectsContainer > div > div > div > a ').off('click');

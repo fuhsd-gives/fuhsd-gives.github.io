@@ -133,7 +133,7 @@ $(document).ready(function () {
         $('#projectsContainer > div > div > div > a > div').addClass('not-mobile');
         $('#projectsContainer > div > div > div >  div').addClass('not-mobile');
         $('#projectsContainer > div > div > div > a ').not('[href="#projectsContainer"]').off('click');
-        $('#projectsContainer > div > div > div > a ').on('click', function (event) {
+        $('#projectsContainer > div > div > div > a ').not('[href="#projectsContainer"]').on('click', function (event) {
             event.preventDefault();
             return false;
         });

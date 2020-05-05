@@ -1447,7 +1447,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999; }
+  z-index: 9; }
 
 .menu-bar {
   cursor: pointer; }
@@ -2094,6 +2094,8 @@ body.modal-open header {
     text-align: center; }
     .project-area .header-text h1 {
       margin-bottom: 25px; }
+  .project-area .carousel.row.slide {
+    z-index: 8; }
   .project-area .carousel-control-next-icon,
   .project-area .carousel-control-prev-icon {
     -webkit-filter: invert(1);

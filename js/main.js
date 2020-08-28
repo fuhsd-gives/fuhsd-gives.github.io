@@ -341,6 +341,7 @@ $(document).ready(function () {
         $.ajax({
             url: "https://coinwar.santaclaragives.org/data",
             // url: "http://localhost:8080/data",
+            // url: "https://cors-anywhere.herokuapp.com/https://coinwar.santaclaragives.org/data",
             method: "GET",
         }).done(function (data) {
             respArr = data.response;
@@ -387,6 +388,7 @@ $(document).ready(function () {
             let highestAmt = respArr[respArr.length - 1].total;
 
             let createLabel = (text, index) => {
+                // console.info('creating label', text);
                 return {
                     text: text,
                     fontColor: '#FFFFFF',
@@ -431,7 +433,11 @@ $(document).ready(function () {
                 },
                 labels: respArr.map(function (obje, oIndex) {
                     if (+obje.total < highestAmt / 2) {
-                        return createLabel(obje.school.substring(0, obje.school.indexOf(' ')), oIndex);
+                        if(obje.school.includes(' ')){
+                            return createLabel(obje.school.substring(0, obje.school.indexOf(' ')), oIndex);
+                        }else{
+                            return createLabel(obje.school.substring(0, 7) + (obje.school.length > 7 ? '...': ''), oIndex);
+                        }
                     } else {
                         return createLabel(obje.school, oIndex);
                     }
@@ -482,6 +488,7 @@ let count_loadTable = 0;
 
 function tableAjaxRequest(params) {
     let tableDataUrl = 'https://coinwar.santaclaragives.org/standings';
+    // let tableDataUrl = 'http://localhost:8080/standings';
     $.ajax({
         url: tableDataUrl,
         method: "GET",

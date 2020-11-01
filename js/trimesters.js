@@ -34,21 +34,21 @@ $(document).ready(function () {
 
     $('#copyright').html('Copyright &copy;' + new Date().getFullYear() + ' All rights reserved | Made with <i aria-hidden="true" class="fa fa-heart-o"></i> by <a href="./" rel="noopener" target="_blank">Santa Clara Gives</a>\n');
 
-    $.getJSON("/quarters/index.json", function (data) {
-        if (!data.quarters) {
+    $.getJSON("/trimesters/index.json", function (data) {
+        if (!data.trimesters) {
             console.error('navigation error');
             $('.side-bar').css('display', 'none');
         }
-        for (let i = 0; i < data.quarters.length; i++) {
+        for (let i = 0; i < data.trimesters.length; i++) {
             let hrefStrings = '';
-            for (let j = 0; j < data.quarters[i].quarters.length; j++) {
-                hrefStrings += '<a  href="/quarters/'+data.quarters[i].year+'/q' + data.quarters[i].quarters[j] + '">' +
-                    '            Quarter ' + data.quarters[i].quarters[j] +
+            for (let j = 0; j < data.trimesters[i].trimesters.length; j++) {
+                hrefStrings += '<a  href="/trimesters/'+data.trimesters[i].year+'/t' + data.trimesters[i].trimesters[j] + '">' +
+                    '            Trimester ' + data.trimesters[i].trimesters[j] +
                     '        </a>'
             }
             $('.side-bar').append(
                 '<div>' +
-                data.quarters[i].year +
+                data.trimesters[i].year +
                 hrefStrings +
                 '</div>'
             )
